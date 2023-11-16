@@ -2,7 +2,9 @@
     <div class="header js-header js-dropdown">
         <div class="container">
             <div class="header__logo">
+                <a href="{{url('/')}}">
                     <img src="{{ asset('assets/images/logo/logo-full.png') }}" alt="logo">
+                </a>
                 <nav class="dropdown dropdown--design-01" data-dropdown-list="logo">
                     <ul class="dropdown__catalog">
                         <li><a href="index.html">Home Page</a></li>
@@ -158,7 +160,7 @@
             </div>
         </div>
         <div class="header__offset-btn">
-            <a href="create-topic.html"><img src="{{asset('assets/fonts/icons/main/New_Topic.svg')}}" alt="New Topic"></a>
+            <a href="create-topic.html"><img src="{{asset('assetsfonts/icons/main/New_Topic.svg')}}" alt="New Topic"></a>
         </div>
     </div>
 </header>
