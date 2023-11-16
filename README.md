@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">Chishti Chats</h1>
+<p align="center"><i>Chat Forum for Khwaja Moinuddin Chishti Language Univeristy</i></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<p align="center"><a href="#" target="_blank"><img src="public/assets/images/logo/logo-full.png" width="400" alt="Chishti Chats Logo"></a></p>
 
-## About Laravel
+<div align="center">
+  <a href="https://github.com/SubhanRaj/Chishti-Chats/stargazers"><img src="https://img.shields.io/github/stars/SubhanRaj/Chishti-Chats" alt="Stars Badge"/></a>
+<a href="https://github.com/SubhanRaj/Chishti-Chats/network/members"><img src="https://img.shields.io/github/forks/SubhanRaj/Chishti-Chats" alt="Forks Badge"/></a>
+<a href="https://github.com/SubhanRaj/Chishti-Chats/pulls"><img src="https://img.shields.io/github/issues-pr/SubhanRaj/Chishti-Chats" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/SubhanRaj/Chishti-Chats/issues"><img src="https://img.shields.io/github/issues/SubhanRaj/Chishti-Chats" alt="Issues Badge"/></a>
+<a href="https://github.com/SubhanRaj/Chishti-Chats/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/SubhanRaj/Chishti-Chats?color=2b9348"></a>
+<a href="https://github.com/SubhanRaj/Chishti-Chats/blob/master/LICENSE"><img src="https://img.shields.io/github/license/SubhanRaj/Chishti-Chats?color=2b9348" alt="License Badge"/></a>
+</div>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## About Chishti Chats
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Chishti Chats is a student-centric forum developed to foster a vibrant community within Khwaja Moinuddin Chishti Language University. Our platform aims to facilitate seamless communication, knowledge sharing, and collaboration among students and faculty members. With an intuitive interface, Chishti Chats offers a centralized space for students to engage in discussions, share valuable insights, create meaningful connections, and enhance their academic journey.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tech Stack
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<div align="center">
+<!-- laravel -->
+<img src="https://img.shields.io/badge/laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel Badge"/>
+<!-- blade -->
+<img src="https://img.shields.io/badge/blade-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Blade Badge"/>
+<!-- bootstrap -->
+<img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Badge"/>
+<!-- firebase -->
+<img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white" alt="Firebase Badge"/>
+<!-- mysql -->
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL Badge"/>
+</div>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Prequesties
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+As this project is built on Laravel, you need to have the following installed on your system:
 
-## Laravel Sponsors
+- Any Server (XAMPP, WAMP, LAMP, etc.) with PHP version 8.0 or above
+- Ensure you met all the requriments as mentioned in [Laravel Documentation](https://laravel.com/docs/10.x/deployment#server-requirements).
+- Composer for managing dependencies, which can be installed from [here](https://getcomposer.org/download/).
+- NodeJS & NPM for managing frontend dependencies, which can be installed from [here](https://nodejs.org/en/download/).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+As long as you have the above installed, you are good to go.
 
-### Premium Partners
+## Setup and Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+You can follow the steps below to setup the project on your system:
+
+1. Clone the repository to your system using the following command:
+
+```bash
+git clone https://github.com/subhanraj/chishti-chats.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd chishti-chats
+```
+
+3. Install all the dependencies using composer:
+
+```bash
+composer install
+```
+4. Install all the dependencies using npm:
+
+```bash
+npm install
+```
+
+5. Create a copy of `.env.example` file as `.env` and update the database credentials:
+
+```bash
+cp .env.example .env
+```
+
+6. Set the application key:
+
+```bash
+php artisan key:generate
+```
+7. Run the database migrations:
+
+```bash
+php artisan migrate
+```
+8. Run the database seeder:
+
+```bash
+php artisan db:seed
+```
+9. Run the application:
+
+```bash
+php artisan serve
+```
+
+Now, you can access the application at `http://localhost:8000`.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+We welcome contributions to Chishti Chats. If you are interested in contributing to this project, please read our [contributing guidelines](CONTRIBUTING.md).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
