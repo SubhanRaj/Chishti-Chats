@@ -9,7 +9,7 @@
 <a href="https://github.com/SubhanRaj/Chishti-Chats/pulls"><img src="https://img.shields.io/github/issues-pr/SubhanRaj/Chishti-Chats" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/SubhanRaj/Chishti-Chats/issues"><img src="https://img.shields.io/github/issues/SubhanRaj/Chishti-Chats" alt="Issues Badge"/></a>
 <a href="https://github.com/SubhanRaj/Chishti-Chats/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/SubhanRaj/Chishti-Chats?color=2b9348"></a>
-<a href="https://github.com/SubhanRaj/Chishti-Chats/blob/master/LICENSE"><img src="https://img.shields.io/github/license/SubhanRaj/Chishti-Chats?color=2b9348" alt="License Badge"/></a>
+<a href="https://github.com/SubhanRaj/Chishti-Chats/blob/main/LICENSE"><img src="https://img.shields.io/github/license/SubhanRaj/Chishti-Chats?color=2b9348" alt="License Badge"/></a>
 </div>
 
 ## About Chishti Chats
