@@ -57,10 +57,6 @@
                 <label class="create__label" for="tags">Add Tags</label>
                 <input type="text" class="form-control" id="tags" placeholder="e.g. nature, science">
             </div>
-<<<<<<< HEAD
-=======
-            </div>
->>>>>>> 9f3dce2142c9916a8724ec933897ba4050e4a615
             <div class="create__footer">
                 <a href="#" class="create__btn-cansel btn">Cancel</a>
                 <a href="#" class="create__btn-create btn btn--type-02">Create Thread</a>
