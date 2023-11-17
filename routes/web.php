@@ -15,19 +15,15 @@ use App\Http\Controllers\ViewsController;
 |
 */
 
-// Views Routes
 
-Route::controller(ViewsController::class)->prefix('/')->group(function(){
-    Route::get('/', 'index')->name('index');
-});
 
 // Posts Routes
-Route::controller(PostController::class)->prefix('/')->group(function(){
-    Route::get('/posts', 'index')->name('posts.index');
-    Route::get('/posts/create-new-post', 'create')->name('posts.create');
-    Route::post('/posts/create-new-post', 'store')->name('posts.store');
-    Route::get('/posts/{post}', 'show')->name('posts.show');
-    Route::get('/posts/{post}/edit', 'edit')->name('posts.edit');
-    Route::put('/posts/{post}', 'update')->name('posts.update');
-    Route::delete('/posts/{post}', 'destroy')->name('posts.destroy');
+Route::controller(PostController::class)->prefix('posts')->group(function(){
+    Route::get('/', 'index')->name('posts.index');
+    Route::get('/create-new-post', 'create')->name('posts.create');
+    Route::post('/create-new-post', 'store')->name('posts.store');
+    Route::get('/{url_slug}', 'show')->name('posts.show');
+    Route::get('/{post}/edit', 'edit')->name('posts.edit');
+    Route::put('/{post}', 'update')->name('posts.update');
+    Route::delete('/{post}', 'destroy')->name('posts.destroy');
 });

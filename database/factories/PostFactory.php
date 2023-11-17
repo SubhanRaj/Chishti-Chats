@@ -23,6 +23,7 @@ class PostFactory extends Factory
             'content' => $this->faker->text(),
             'filepath' => $this->faker->text(255),
             'tags' => $this->faker->text(255),
+            'url_slug' => $this->faker->slug(),
         ];
     }
 }
