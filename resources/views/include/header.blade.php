@@ -2,56 +2,12 @@
     <div class="header js-header js-dropdown">
         <div class="container">
             <div class="header__logo">
-                <a href="{{url('/')}}">
+                <a href="{{ url('/') }}">
                     <img src="{{ asset('assets/images/logo/logo-full.png') }}" alt="logo">
                 </a>
-                <nav class="dropdown dropdown--design-01" data-dropdown-list="logo">
-                    <ul class="dropdown__catalog">
-                        <li><a href="index.html">Home Page</a></li>
-                        <li><a href="single-topic.html">Single Topic Page</a></li>
-                        <li><a href="simple-signup.html">Sign up Page</a></li>
-                        <li><a href="create-topic.html">Create Topic Page</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="header__search">
-                <form action="#">
-                    <label>
-                        <i class="icon-Search js-header-search-btn-open"></i>
-                        <input type="search" placeholder="Search all forums" class="form-control">
-                    </label>
-                </form>
-                <div class="header__search-close js-header-search-btn-close"><i class="icon-Cancel"></i></div>
-                <div class="header__search-btn" data-dropdown-btn="search">
-                    Topics<i class="icon-Arrow_Below"></i>
-                </div>
-                <div class="dropdown dropdown--design-01" data-dropdown-list="search">
-                    <ul>
-                        <li>
-                            <label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" checked="checked">
-                                    <i></i>
-                                </label>Search Titles Only
-                            </label>
 
-                        </li>
-                        <li>
-                            <label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <i> </i>
-                                </label>Show Results as Posts
-                            </label>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="icon-Advanced_Search"></i>Advanced Search
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
+            <x-search />
             <div class="header__menu">
                 <div class="header__menu-btn" data-dropdown-btn="menu">
                     Latest Topics<i class="icon-Menu_Icon"></i>
@@ -80,8 +36,10 @@
                             <li class="col-xs-6"><a href="#" class="category"><i class="bg-c49bbb"></i>Science</a></li>
                             <li class="col-xs-6"><a href="#" class="category"><i class="bg-3ebafa"></i>Exchange</a></li>
                             <li class="col-xs-6"><a href="#" class="category"><i class="bg-c6b38e"></i>Pets</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-a7cdbd"></i>Entertainment</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-525252"></i>Education</a></li>
+                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-a7cdbd"></i>Entertainment</a>
+                            </li>
+                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-525252"></i>Education</a>
+                            </li>
                             <li class="col-xs-6"><a href="#" class="category"><i class="bg-777da7"></i>Q&amp;As</a></li>
                             <li class="col-xs-6"><a href="#" class="category"><i class="bg-368f8b"></i>Politics</a></li>
                         </ul>
@@ -113,11 +71,13 @@
                         </a>
                         <a href="#">
                             <i class="icon-Badge"></i>
-                            <p>Earned Badge . 19 feb, 17<span><img src="fonts/icons/badges/Lets_talk.svg" alt="Lets Talk">Lets Talk</span></p>
+                            <p>Earned Badge . 19 feb, 17<span><img src="fonts/icons/badges/Lets_talk.svg"
+                                        alt="Lets Talk">Lets Talk</span></p>
                         </a>
                         <a href="#">
                             <i class="icon-Badge"></i>
-                            <p>Earned Badge . 21 feb, 17<span><img src="fonts/icons/badges/Intermediate.svg" alt="Intermediate">Intermediate</span></p>
+                            <p>Earned Badge . 21 feb, 17<span><img src="fonts/icons/badges/Intermediate.svg"
+                                        alt="Intermediate">Intermediate</span></p>
                         </a>
                         <a href="#">
                             <i class="icon-Share_Topic"></i>
@@ -133,7 +93,7 @@
             </div>
             <div class="header__user">
                 <div class="header__user-btn" data-dropdown-btn="user">
-                    <img src="{{asset('assets/fonts/icons/avatars/A.svg')}}" alt="avatar">
+                    <img src="{{ asset('assets/fonts/icons/avatars/A.svg') }}" alt="avatar">
                     Login / Signup <i class="icon-Arrow_Below"></i>
                 </div>
                 <nav class="dropdown dropdown--design-01" data-dropdown-list="user">
@@ -160,7 +120,9 @@
             </div>
         </div>
         <div class="header__offset-btn">
-            <a href="create-topic.html"><img src="{{asset('assets/fonts/icons/main/New_Topic.svg')}}" alt="New Topic"></a>
+            <a href="{{ route('posts.create') }}"><img
+                    src="{{ asset('assets/fonts/icons/main/New_Topic.svg') }}"
+                    alt="New Topic"></a>
         </div>
     </div>
 </header>
