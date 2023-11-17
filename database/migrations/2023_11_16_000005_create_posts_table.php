@@ -13,19 +13,17 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             // postID : primary key, int, max 10 digits
-            $table->id('postID');
-            // userID: foreign key, int, max 3 digits
-            $table->bigInteger('userID')->unsigned();
-            $table->foreign('userID')->references('userID')->on('users');
-            // categoryID: foreign key, int, max 10 digits
-            $table->bigInteger('categoryID')->unsigned();
-            $table->foreign('categoryID')->references('categoryID')->on('categories');
+            $table->id();
+            // userID: int, max 3 digits
+            $table->integer('user_id');
+            // categoryID: int, max 3 digits
+            $table->integer('category_id');
             // title: string, max 255 characters
-            $table->string('title', 255);
+            $table->text('title');
             // content: text
             $table->text('content');
             // filePath: string, max 255 characters
-            $table->string('filePath', 255);
+            $table->string('filepath', 255);
             // tags, csv
             $table->string('tags', 255);
             // created_at, updated_at
