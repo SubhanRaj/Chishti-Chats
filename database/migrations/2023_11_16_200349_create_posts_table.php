@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             // postID : primary key, int, max 10 digits
-            $table->id('postID')->primary();
+            $table->id('postID');
             // userID: foreign key, int, max 3 digits
-            $table->foreignId('userID')->constrained('users');
+            $table->bigInteger('userID')->unsigned();
+            $table->foreign('userID')->references('userID')->on('users');
             // categoryID: foreign key, int, max 10 digits
-            $table->foreignId('categoryID')->constrained('categories');
+            $table->bigInteger('categoryID')->unsigned();
+            $table->foreign('categoryID')->references('categoryID')->on('categories');
             // title: string, max 255 characters
             $table->string('title', 255);
             // content: text

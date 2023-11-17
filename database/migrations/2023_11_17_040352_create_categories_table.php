@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             // categoryID, primary key, int, max 10 digits
-            $table->id('categoryID')->primary();
+            $table->id('categoryID');
             // categoryName, string, max 255 characters, unique
             $table->string('categoryName', 255)->unique();
             // created_at, updated_at

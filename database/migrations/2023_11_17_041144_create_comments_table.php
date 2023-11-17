@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             // commentID, primary key, int, max 10 digits
-            $table->id('commentID')->primary();
+            $table->id('commentID');
             // userID, foreign key, int, max 3 digits
-            $table->foreignId('userID')->constrained('users');
+            $table->bigInteger('userID')->unsigned();
+            $table->foreign('userID')->references('userID')->on('users');
             // postID, foreign key, int, max 10 digits
-            $table->foreignId('postID')->constrained('posts');
+            $table->bigInteger('postID')->unsigned();
+            $table->foreign('postID')->references('postID')->on('posts');
             // content
             $table->text('content');
             // filePath, string, max 255 characters

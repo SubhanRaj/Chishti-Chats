@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             // userID: primary key, int, max 3 digits
-            $table->id('userID')->primary();
+            $table->id('userID');
             // username: string, max 255 characters, unique
             $table->string('username', 255)->unique();
             // email: string, max 255 characters, unique
