@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             // userID: primary key, int, max 3 digits
-            $table->id('userID');
+            $table->id();
             // username: string, max 255 characters, unique
             $table->string('username', 255)->unique();
             // email: string, max 255 characters, unique
@@ -23,11 +23,11 @@ return new class extends Migration
             // remember token: string, max 100 characters
             $table->rememberToken();
             // profilePicture: string, max 255 characters
-            $table->string('profilePicture', 255);
+            $table->string('profile_picture', 255);
             // about: text
             $table->text('about');
             // socialLinks: string, max 255 characters
-            $table->string('socialLinks', 255);
+            $table->string('social_links', 255);
             // verified at: timestamp
             $table->timestamp('email_verified_at')->nullable();
             // created_at, updated_at
