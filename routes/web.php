@@ -15,11 +15,10 @@ use App\Http\Controllers\ViewsController;
 |
 */
 
-
+Route::get('/', [PostController::class, 'index'])->name('index');
 
 // Posts Routes
 Route::controller(PostController::class)->prefix('posts')->group(function(){
-    Route::get('/', 'index')->name('posts.index');
     Route::get('/create-new-post', 'create')->name('posts.create');
     Route::post('/create-new-post', 'store')->name('posts.store');
     Route::get('/{url_slug}', 'show')->name('posts.show');

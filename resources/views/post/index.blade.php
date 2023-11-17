@@ -70,6 +70,6 @@
                 </ul>
             </div>
         </div>
-        <div class="row">
+        
         <x-posts />
 </x-layout>
