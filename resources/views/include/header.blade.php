@@ -71,13 +71,11 @@
                         </a>
                         <a href="#">
                             <i class="icon-Badge"></i>
-                            <p>Earned Badge . 19 feb, 17<span><img src="fonts/icons/badges/Lets_talk.svg"
-                                        alt="Lets Talk">Lets Talk</span></p>
+                            <p>Earned Badge . 19 feb, 17<span><img src="fonts/icons/badges/Lets_talk.svg" alt="Lets Talk">Lets Talk</span></p>
                         </a>
                         <a href="#">
                             <i class="icon-Badge"></i>
-                            <p>Earned Badge . 21 feb, 17<span><img src="fonts/icons/badges/Intermediate.svg"
-                                        alt="Intermediate">Intermediate</span></p>
+                            <p>Earned Badge . 21 feb, 17<span><img src="fonts/icons/badges/Intermediate.svg" alt="Intermediate">Intermediate</span></p>
                         </a>
                         <a href="#">
                             <i class="icon-Share_Topic"></i>
@@ -93,14 +91,13 @@
             </div>
             <div class="header__user">
                 <div class="header__user-btn" data-dropdown-btn="user">
-                    <img src="{{ asset('assets/fonts/icons/avatars/A.svg') }}" alt="avatar">
-                    Login / Signup <i class="icon-Arrow_Below"></i>
+                    <img src="{{ asset('assets/fonts/icons/avatars/A.svg') }}" alt="avatar">Signup <i class="icon-Arrow_Below"></i>
                 </div>
                 <nav class="dropdown dropdown--design-01" data-dropdown-list="user">
                     <div>
                         <div class="dropdown__icons">
-                            <a href="#"><i class="icon-Bookmark"></i></a>
-                            <a href="#"><i class="icon-Message"></i></a>
+                            <!-- <a href="#"><i class="icon-Bookmark"></i></a> -->
+                            <!-- <a href="#"><i class="icon-Message"></i></a> -->
                             <a href="#"><i class="icon-Preferences"></i></a>
                             <a href="#"><i class="icon-Logout"></i></a>
                         </div>
@@ -108,21 +105,19 @@
                     <div>
                         <ul class="dropdown__catalog">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Badges</a></ii>
-                            <li><a href="#">My Groups</a></li>
-                            <li><a href="#">Notifications</a></li>
+                            <!-- <li><a href="#">Badges</a></ii> -->
+                            <!-- <li><a href="#">My Groups</a></li> -->
+                            <!-- <li><a href="#">Notifications</a></li> -->
                             <li><a href="#">Topics</a></li>
                             <li><a href="#">Likes</a></li>
-                            <li><a href="#">Solved</a></li>
+                            <!-- <li><a href="#">Solved</a></li> -->
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
         <div class="header__offset-btn">
-            <a href="{{ route('posts.create') }}"><img
-                    src="{{ asset('assets/fonts/icons/main/New_Topic.svg') }}"
-                    alt="New Topic"></a>
+            <a href="{{ route('posts.create') }}"><img src="{{ asset('assets/fonts/icons/main/New_Topic.svg') }}" alt="New Topic"></a>
         </div>
     </div>
 </header>

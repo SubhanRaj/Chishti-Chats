@@ -6,7 +6,8 @@
     <div class="container">
         <div class="create">
             <div class="create__head">
-                <div class="create__title"><img src="{{asset('assets/fonts/icons/main/New_Topic.svg')}}" alt="New topic">Create New Thread
+                <div class="create__title"><img src="{{ asset('assets/fonts/icons/main/New_Topic.svg') }}"
+                        alt="New topic">Create New Thread
                 </div>
                 <span>Forum Guidelines</span>
             </div>
@@ -50,8 +51,7 @@
                         <a href="#" class="btn">Preview</a>
                     </div>
                 </div>
-                <textarea class="form-control"
-                    id="description">Adding amazing books to your summer reading list can be as simple as signing up for the BuzzFeed Books newsletter! You'll get a review of a new book you might love every Wednesday, plus much more twice a week: great jokes and quizzes, wonderful lists, powerful essays, all the Harry Potter and YA buzz you can handle, and of course, even more book recommendations. So make some space in your beach bag now — because you're going to have a lot to read this summer.</textarea>
+                <textarea class="form-control" id="description">Adding amazing books to your summer reading list can be as simple as signing up for the BuzzFeed Books newsletter! You'll get a review of a new book you might love every Wednesday, plus much more twice a week: great jokes and quizzes, wonderful lists, powerful essays, all the Harry Potter and YA buzz you can handle, and of course, even more book recommendations. So make some space in your beach bag now — because you're going to have a lot to read this summer.</textarea>
             </div>
             <div class="create__section">
                 <label class="create__label" for="tags">Add Tags</label>

@@ -3159,7 +3159,7 @@ select {
 }
 @media only screen and (min-width: 1040px) {
     .header [data-dropdown-list="user"] {
-        min-width: 300px;
+        min-width: 200px;
         left: auto;
         right: 0;
     }
