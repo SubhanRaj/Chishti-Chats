@@ -3,7 +3,7 @@
         <div class="container">
             <div class="footer__logo">
                 <div>
-                    <a href="{{ route('index') }}">
+                    <a href=" ">
                         <img src="{{asset('assets/images/logo/logo-full.png')}}" alt="logo">
                     </a>
                 </div>

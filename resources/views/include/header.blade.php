@@ -2,7 +2,7 @@
     <div class="header js-header js-dropdown">
         <div class="container">
             <div class="header__logo">
-                <a href="{{ route('index') }}">
+                <a href=" ">
                     <img src="{{ asset('assets/images/logo/logo-full.png') }}" alt="logo">
                 </a>
 
@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="header__offset-btn">
-            <a href="{{ route('posts.create') }}"><img src="{{ asset('assets/fonts/icons/main/New_Topic.svg') }}" alt="New Topic"></a>
+            <a href=" "><img src="{{ asset('assets/fonts/icons/main/New_Topic.svg') }}" alt="New Topic"></a>
         </div>
     </div>
 </header>
