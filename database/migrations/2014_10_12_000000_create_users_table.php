@@ -12,13 +12,28 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            // userID: primary key, int, max 3 digits
+            $table->id('userID')->primary();
+            // username: string, max 255 characters, unique
+            $table->string('username', 255)->unique();
+            // email: string, max 255 characters, unique
+            $table->string('email', 255)->unique();
+            // password: string, max 255 characters
+            $table->string('password', 255);
+            // remember token: string, max 100 characters
             $table->rememberToken();
+            // profilePicture: string, max 255 characters
+            $table->string('profilePicture', 255);
+            // about: text
+            $table->text('about');
+            // socialLinks: string, max 255 characters
+            $table->string('socialLinks', 255);
+            // verified at: timestamp
+            $table->timestamp('email_verified_at')->nullable();
+            // created_at, updated_at
             $table->timestamps();
+            // soft delete
+            $table->softDeletes();
         });
     }
 
