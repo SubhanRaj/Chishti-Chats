@@ -24,7 +24,7 @@ Route::controller(ViewsController::class)->prefix('/')->group(function(){
 // Posts Routes
 Route::controller(PostController::class)->prefix('/')->group(function(){
     Route::get('/posts', 'index')->name('posts.index');
-    Route::get('/posts/create', 'create')->name('posts.create');
+    Route::get('/posts/create-new-post', 'create')->name('posts.create');
     Route::post('/posts', 'store')->name('posts.store');
     Route::get('/posts/{post}', 'show')->name('posts.show');
     Route::get('/posts/{post}/edit', 'edit')->name('posts.edit');
