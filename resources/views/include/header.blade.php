@@ -160,7 +160,7 @@
             </div>
         </div>
         <div class="header__offset-btn">
-            <a href="create-topic.html"><img src="{{asset('assetsfonts/icons/main/New_Topic.svg')}}" alt="New Topic"></a>
+            <a href="create-topic.html"><img src="{{asset('assets/fonts/icons/main/New_Topic.svg')}}" alt="New Topic"></a>
         </div>
     </div>
 </header>

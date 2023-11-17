@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('filepath', 255);
             // tags, csv
             $table->string('tags', 255);
-            // created_at, updated_at
+            // created_at, updated_at 
             $table->timestamps();
             // deleted_at
             $table->softDeletes();
