@@ -2,7 +2,7 @@
     <div class="header js-header js-dropdown">
         <div class="container">
             <div class="header__logo">
-                <a href="{{ url('/') }}">
+                <a href="{{ route('index') }}">
                     <img src="{{ asset('assets/images/logo/logo-full.png') }}" alt="logo">
                 </a>
 
@@ -71,11 +71,11 @@
                         </a>
                         <a href="#">
                             <i class="icon-Badge"></i>
-                            <p>Earned Badge . 19 feb, 17<span><img src="fonts/icons/badges/Lets_talk.svg" alt="Lets Talk">Lets Talk</span></p>
+                            <p>Earned Badge . 19 feb, 17<span><img src="{{asset('assets/fonts/icons/badges/Lets_talk.svg')}}" alt="Lets Talk">Lets Talk</span></p>
                         </a>
                         <a href="#">
                             <i class="icon-Badge"></i>
-                            <p>Earned Badge . 21 feb, 17<span><img src="fonts/icons/badges/Intermediate.svg" alt="Intermediate">Intermediate</span></p>
+                            <p>Earned Badge . 21 feb, 17<span><img src="{{asset('assets/fonts/icons/badges/Intermediate.svg')}}" alt="Intermediate">Intermediate</span></p>
                         </a>
                         <a href="#">
                             <i class="icon-Share_Topic"></i>

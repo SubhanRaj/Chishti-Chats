@@ -3250,7 +3250,6 @@ select {
     }
 }
 .footer__bline {
-    border-top: solid 1px #e9ecee;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-box;
