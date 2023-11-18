@@ -1,123 +1,186 @@
-<header>
-    <div class="header js-header js-dropdown">
-        <div class="container">
-            <div class="header__logo">
-                <a href="{{ route('index') }}">
-                    <img src="{{ asset('assets/images/logo/logo-full.png') }}" alt="logo">
-                </a>
+<!--================Navbar Area =================-->
+<nav class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block">
+    <div class="container">
+        <a class="navbar-brand header_logo" href="{{ route('index')}}">
+            <img class="first_logo sticky_logo" src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
+            <img class="white_logo main_logo" src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
+        </a>
 
-            </div>
-            <x-search />
-            <div class="header__menu">
-                <div class="header__menu-btn" data-dropdown-btn="menu">
-                    Latest Topics<i class="icon-Menu_Icon"></i>
-                </div>
-                <nav class="dropdown dropdown--design-01" data-dropdown-list="menu">
-                    <div>
-                        <ul class="dropdown__catalog row">
-                            <li class="col-xs-6"><a href="#">New</a></li>
-                            <li class="col-xs-6"><a href="#">Unread</a></li>
-                            <li class="col-xs-6"><a href="#">Groups</a></li>
-                            <li class="col-xs-6"><a href="#">Users</a></li>
-                            <li class="col-xs-6"><a href="#">Tags</a></li>
-                            <li class="col-xs-6"><a href="#">Shortcuts</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Categories</h3>
-                        <ul class="dropdown__catalog row">
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-f9bc64"></i>Hobbies</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-348aa7"></i>Social</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-4436f8"></i>Video</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-5dd39e"></i>Random</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-ff755a"></i>Arts</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-bce784"></i>Tech</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-83253f"></i>Gaming</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-c49bbb"></i>Science</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-3ebafa"></i>Exchange</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-c6b38e"></i>Pets</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-a7cdbd"></i>Entertainment</a>
-                            </li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-525252"></i>Education</a>
-                            </li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-777da7"></i>Q&amp;As</a></li>
-                            <li class="col-xs-6"><a href="#" class="category"><i class="bg-368f8b"></i>Politics</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <ul class="dropdown__catalog row">
-                            <li class="col-xs-6"><a href="#">Support</a></li>
-                            <li class="col-xs-6"><a href="#">Forum Rules</a></li>
-                            <li class="col-xs-6"><a href="#">Blog</a></li>
-                            <li class="col-xs-6"><a href="#">About</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="header__notification">
-                <div class="header__notification-btn" data-dropdown-btn="notification">
-                    <i class="icon-Notification"></i>
-                    <span>6</span>
-                </div>
-                <div class="dropdown dropdown--design-01" data-dropdown-list="notification">
-                    <div>
-                        <a href="#">
-                            <i class="icon-Favorite_Topic"></i>
-                            <p>Roswell . 16 feb, 17<span>Which movie have you watched recently?</span></p>
-                        </a>
-                        <a href="#">
-                            <i class="icon-Reply_Empty"></i>
-                            <p>Callis . 18 feb, 17<span>I got an amzon thingie!</span></p>
-                        </a>
-                        <a href="#">
-                            <i class="icon-Badge"></i>
-                            <p>Earned Badge . 19 feb, 17<span><img src="{{asset('assets/fonts/icons/badges/Lets_talk.svg')}}" alt="Lets Talk">Lets Talk</span></p>
-                        </a>
-                        <a href="#">
-                            <i class="icon-Badge"></i>
-                            <p>Earned Badge . 21 feb, 17<span><img src="{{asset('assets/fonts/icons/badges/Intermediate.svg')}}" alt="Intermediate">Intermediate</span></p>
-                        </a>
-                        <a href="#">
-                            <i class="icon-Share_Topic"></i>
-                            <p>Charlie . 22 feb, 17<span>Need Video file of that cat.</span></p>
-                        </a>
-                        <a href="#">
-                            <i class="icon-Pencil"></i>
-                            <p>Greentea . 22 feb, 17<span>New Facebook like and share button.</span></p>
-                        </a>
-                        <span><a href="#">view older notifications...</a></span>
-                    </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav menu ms-auto">
+                <li class="nav-item dropdown submenu active">
+                    <a href="{{ route('index')}}" class="nav-link dropdown-toggle">Home</a>
+                </li>
+                <li class="nav-item dropdown submenu">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pages
+                    </a>
+                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="Layout_Header-Search-1.html" class="nav-link">Header
+                                Layout 01</a></li>
+                        <li class="nav-item"><a href="Layout_Header-Search-2.html" class="nav-link">Header
+                                Layout 02</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
+                        <li class="nav-item"><a href="404-error.html" class="nav-link">404 Error</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown submenu">
+                    <a class="nav-link dropdown-toggle" href="forums.html" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Forum
+                    </a>
+                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="forums.html" class="nav-link">Forums Root</a></li>
+                        <li class="nav-item"><a href="forum-topics.html" class="nav-link">Forum Topics</a></li>
+                        <li class="nav-item"><a href="forum-topics-2.html" class="nav-link">Forum Topics Two</a>
+                        </li>
+                        <li class="nav-item"><a href="forum-single.html" class="nav-link">Topic Details</a></li>
+                        <li class="nav-item"><a href="forum-profile.html" class="nav-link">User Profile</a></li>
+                        <li class="nav-item"><a href="add-question.html" class="nav-link">Add Question</a></li>
+                        <li class="nav-item"><a href="user-list.html" class="nav-link">User List</a></li>
+                        <li class="nav-item"><a href="user-details.html" class="nav-link">User Details</a></li>
+                        <li class="nav-item"><a href="badges.html" class="nav-link">User Badges</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown submenu">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Blog
+                    </a>
+                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-bs-toggle="dropdown"></i>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="blog-grid.html" class="nav-link">Blog Grid</a></li>
+                        <li class="nav-item"><a href="blog-grid-two.html" class="nav-link">Blog Grid Two</a>
+                        </li>
+                        <li class="nav-item"><a href="blog-list.html" class="nav-link">Blog List</a></li>
+                        <li class="nav-item"><a href="blog-single.html" class="nav-link">Blog Details</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="right-nav">
+                <a class="action_btn btn_small_two btn-text-medium round-btn-2" href="#">Sign In</a>
+                <div class="px-2 js-darkmode-btn" title="Toggle dark mode">
+                    <label for="something" class="tab-btn tab-btns">
+                        <ion-icon name="moon"></ion-icon>
+                    </label>
+                    <label for="something" class="tab-btn">
+                        <ion-icon name="sunny"></ion-icon>
+                    </label>
+                    <label class=" ball" for="something"></label>
+                    <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
                 </div>
             </div>
-            <div class="header__user">
-                <div class="header__user-btn" data-dropdown-btn="user">
-                    <img src="{{ asset('assets/fonts/icons/avatars/A.svg') }}" alt="avatar">Signup <i class="icon-Arrow_Below"></i>
-                </div>
-                <nav class="dropdown dropdown--design-01" data-dropdown-list="user">
-                    <div>
-                        <div class="dropdown__icons">
-                            <!-- <a href="#"><i class="icon-Bookmark"></i></a> -->
-                            <!-- <a href="#"><i class="icon-Message"></i></a> -->
-                            <a href="#"><i class="icon-Preferences"></i></a>
-                            <a href="#"><i class="icon-Logout"></i></a>
-                        </div>
-                    </div>
-                    <div>
-                        <ul class="dropdown__catalog">
-                            <li><a href="#">Dashboard</a></li>
-                            <!-- <li><a href="#">Badges</a></ii> -->
-                            <!-- <li><a href="#">My Groups</a></li> -->
-                            <!-- <li><a href="#">Notifications</a></li> -->
-                            <li><a href="#">Topics</a></li>
-                            <li><a href="#">Likes</a></li>
-                            <!-- <li><a href="#">Solved</a></li> -->
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <div class="header__offset-btn">
-            <a href="{{ route('posts.create') }}"><img src="{{ asset('assets/fonts/icons/main/New_Topic.svg') }}" alt="New Topic"></a>
         </div>
     </div>
-</header>
+</nav>
+<div class="mobile_main_menu sticky-nav menu_one">
+    <div class="container">
+        <div class="mobile_menu_left">
+            <button type="button" class="navbar-toggler mobile_menu_btn">
+                <span class="menu_toggle ">
+                    <span class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </span>
+            </button>
+            <a class="navbar-brand header_logo" href="index-2.html">
+                <img class="sticky_logo " src="img/logo.png" srcset="img/logo-2x.png 2x" alt="logo">
+                <img class="main_logo white_logo" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
+            </a>
+        </div>
+        <div class="mobile_menu_right">
+            <div class="right-nav">
+                <div class="px-2 js-darkmode-btn" title="Toggle dark mode">
+                    <label for="something2" class="tab-btn tab-btns">
+                        <ion-icon name="moon"></ion-icon>
+                    </label>
+                    <label for="something2" class="tab-btn">
+                        <ion-icon name="sunny"></ion-icon>
+                    </label>
+                    <label class=" ball" for="something2"></label>
+                    <input type="checkbox" name="something2" id="something2" class="dark_mode_switcher">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="side_menu">
+    <div class="mobile_menu_header">
+        <div class="close_nav">
+            <i class="icon_close"></i>
+        </div>
+        <div class="mobile_logo">
+            <a class="navbar-brand header_logo me-0" href="index-2.html">
+                <img class="sticky_logo main_logo" src="img/logo.png" srcset="img/logo-2x.png 2x" alt="logo">
+                <img class="white_logo" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
+            </a>
+        </div>
+    </div>
+    <div class="mobile_nav_wrapper">
+        <nav class="mobile_nav_top">
+            <ul class="navbar-nav menu ms-auto">
+                <li class="nav-item dropdown submenu active">
+                    <a href="index-2.html" class="nav-link dropdown-toggle">Home</a>
+                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item active"><a href="index-2.html" class="nav-link">Demo 01</a></li>
+                        <li class="nav-item"><a href="index-3.html" class="nav-link">Demo 02</a></li>
+                        <li class="nav-item "><a href="index-4.html" class="nav-link">Demo 03</a></li>
+                        <li class="nav-item "><a href="index-5.html" class="nav-link">Demo 04</a></li>
+                        <li class="nav-item "><a href="index-6.html" class="nav-link">Demo 05</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown submenu">
+                    <a class="nav-link dropdown-toggle" href="#">
+                        Pages
+                    </a>
+                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="Layout_Header-Search-1.html" class="nav-link">Header
+                                Layout 01</a></li>
+                        <li class="nav-item"><a href="Layout_Header-Search-2.html" class="nav-link">Header
+                                Layout 02</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
+                        <li class="nav-item"><a href="404-error.html" class="nav-link">404 Error</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown submenu ">
+                    <a class="nav-link dropdown-toggle" href="forums.html">
+                        Forum
+                    </a>
+                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="forums.html" class="nav-link">Forums Root</a></li>
+                        <li class="nav-item"><a href="forum-topics.html" class="nav-link">Forum Topics</a></li>
+                        <li class="nav-item"><a href="forum-topics-2.html" class="nav-link">Forum Topics Two</a>
+                        </li>
+                        <li class="nav-item"><a href="forum-single.html" class="nav-link">Topic Details</a></li>
+                        <li class="nav-item"><a href="forum-profile.html" class="nav-link">User Profile</a></li>
+                        <li class="nav-item "><a href="add-question.html" class="nav-link">Add Question</a></li>
+                        <li class="nav-item"><a href="user-list.html" class="nav-link">User List</a></li>
+                        <li class="nav-item"><a href="user-details.html" class="nav-link">User Details</a></li>
+                        <li class="nav-item"><a href="badges.html" class="nav-link">User Badges</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown submenu">
+                    <a class="nav-link dropdown-toggle" href="#">
+                        Blog
+                    </a>
+                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="blog-grid.html" class="nav-link">Blog Grid</a></li>
+                        <li class="nav-item"><a href="blog-grid-two.html" class="nav-link">Blog Grid Two</a>
+                        </li>
+                        <li class="nav-item"><a href="blog-list.html" class="nav-link">Blog List</a></li>
+                        <li class="nav-item"><a href="blog-single.html" class="nav-link">Blog Details</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
