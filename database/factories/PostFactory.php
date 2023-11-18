@@ -19,10 +19,10 @@ class PostFactory extends Factory
         return [
             'user_id' => $this->faker->numberBetween(1, 10),
             'category_id' => $this->faker->numberBetween(1, 10),
-            'title' => $this->faker->text(255),
+            'title' => $this->faker->text(25),
             'content' => $this->faker->text(),
             'filepath' => $this->faker->text(255),
-            'tags' => $this->faker->text(255),
+            'tags' => $this->faker->words(3, true),
             'url_slug' => $this->faker->slug(),
         ];
     }

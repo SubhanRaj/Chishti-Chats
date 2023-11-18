@@ -13,7 +13,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view ('post.index', ['post' => Post::all()]);
+        // show index page, get all posts from database
+        $posts = Post::latest()->paginate(10);
+        // return view with posts and tags
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -39,6 +42,8 @@ class PostController extends Controller
     {
         //get the post by matching the url_slug
         $post = Post::where('url_slug', $url_slug)->firstOrFail();
+        // return view with post
+        return view('post.show', compact('post'));
 
     }
 
