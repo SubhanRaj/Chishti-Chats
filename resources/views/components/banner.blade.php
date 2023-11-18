@@ -35,15 +35,14 @@
     <div class="container">
         <div class="row doc_banner_content">
             <div class="col-12 px-0">
-                <h1 class="banner-title-h1">Welcome to Ama Support Center</h1>
-                <p class="banner-text-p">Meet other Ama users like you.
-                    Get answers & discover new ways to use Ama.</p>
+                <h1 class="banner-title-h1">Welcome to Chishti Chats</h1>
+                <p class="banner-text-p">Where Ideas Unite</p>
             </div>
             <div class="col-lg-8 mx-auto">
                 <div class="banner-search-box mt-40">
                     <form action="#">
                         <div class="input-wrapper">
-                            <input placeholder="Search your forum of topic here..." type='search' id="searchbox" autocomplete="off" name="search">
+                            <input placeholder="Search for anything here..." type='search' id="searchbox" autocomplete="off" name="search">
                             <button type="submit" class="search-btn">Search</button>
                         </div>
                     </form>
