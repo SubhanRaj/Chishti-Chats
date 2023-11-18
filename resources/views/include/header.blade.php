@@ -8,7 +8,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav menu ms-auto">
-                <li class="nav-item dropdown submenu active">
+                <li class="nav-item active">
                     <a href="{{ route('index')}}" class="nav-link dropdown-toggle">Home</a>
                 </li>
                 <li class="nav-item dropdown submenu">
@@ -86,9 +86,9 @@
                     </span>
                 </span>
             </button>
-            <a class="navbar-brand header_logo" href="index-2.html">
-                <img class="sticky_logo " src="img/logo.png" srcset="img/logo-2x.png 2x" alt="logo">
-                <img class="main_logo white_logo" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
+            <a class="navbar-brand header_logo" href="{{ route('index')}} }}">
+                <img class="sticky_logo " src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
+                <img class="main_logo white_logo" src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
             </a>
         </div>
         <div class="mobile_menu_right">
@@ -115,8 +115,8 @@
         </div>
         <div class="mobile_logo">
             <a class="navbar-brand header_logo me-0" href="index-2.html">
-                <img class="sticky_logo main_logo" src="img/logo.png" srcset="img/logo-2x.png 2x" alt="logo">
-                <img class="white_logo" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
+                <img class="sticky_logo main_logo" src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
+                <img class="white_logo" src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
             </a>
         </div>
     </div>

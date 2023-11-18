@@ -2,10 +2,10 @@
 <footer class="footer-3 ">
     <div class="footer-shapes">
         <div class="shape">
-            <img class="wow fadeInLeft" data-wow-delay="0.5s" src="img/footer/shape-1.png" alt="">
+            <img class="wow fadeInLeft" data-wow-delay="0.5s" src="{{asset('assets/img/footer/shape-1.png')}}" alt="">
         </div>
         <div class="shape">
-            <img src="img/footer/shape-2.png" alt="">
+            <img src="{{asset('assets/img/footer/shape-2.png')}}" alt="">
         </div>
     </div>
     <div class="container">
@@ -13,7 +13,7 @@
             <div class="row gy-lg-0 gy-4">
                 <div class="col-lg-4 col-sm-6 wow fadeInLeft">
                     <div class="footer-widget pr-20">
-                        <a href="#"> <img src="img/logo-w.png" alt="logo"></a>
+                        <a href="#"> <img src="{{asset('assets/img/logo/logo-full.png')}}" height="150px" alt="logo"></a>
                         <p class="f-text mt-55">Join with your email address</p>
                         <div class="footer-sub-form-2">
                             <form action="#">
