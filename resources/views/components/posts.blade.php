@@ -15,7 +15,7 @@
                     <div class="posts__topic">
                         <div class="posts__content">
                             <a href="#">
-                                <h3></h3>
+                                <h3>{{$post->title}}</h3>
                             </a>
                             <div class="posts__tags tags">
                                 <a href="#" class="bg-4f80b0">gaming</a>
