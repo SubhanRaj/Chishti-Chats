@@ -4,10 +4,9 @@
   /*============= preloader js css =============*/
   var cites = [];
   cites[0] =
-    "We design Docy for the readers, optimizing not for page views or engagement";
-  cites[1] = "Docy turns out that context is a key part of learning.";
-  cites[2] = "You can create any type of product documentation with Docy";
-  cites[3] = "Advanced visual search system powered by Ajax";
+    "Chisthi Chats is a forum like you have not seen before.";
+  cites[1] = "A Place to ask and know about anything";
+  cites[2] = "By the Students of KMCLU, for the Students of KMCLU";
   var cite = cites[Math.floor(Math.random() * cites.length)];
   $("#preloader p").text(cite);
   $("#preloader").addClass("loading");
