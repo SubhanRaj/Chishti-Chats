@@ -1,6 +1,42 @@
 <x-layout>
     <x-slot:title>Home </x-slot:title>
     <x-banner />
+    <!--================Feature One Area =================-->
+    <section class="feature-one">
+        <div class="container">
+            <div class="row align-items-center gy-4 gy-lg-0">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <div class="img-content">
+                        <img class="wow fadeInRight" data-wow-delay="0.1s" src="{{asset('assets/img/home_two/Post.png')}}" alt="post">
+                        <img class="wow fadeInLeft" data-wow-delay="0.2s" src="{{asset('assets/img/home_two/Comment.png')}}" alt="comment">
+                        <img class="bg-img" src="{{asset('assets/img/home_two/post-vaiation-bg.png')}}" alt="bg img">
+                        <img src="{{asset('assets/img/home_two/Subtract.png')}}" alt="shape">
+                        <img src="{{asset('assets/img/home_two/scribbles-scribbles-62.png')}}" alt="shape">
+                        <img src="{{asset('assets/img/home_two/scribbles-scribbles-2.png')}}" alt="shape">
+                    </div>
+
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <div class="feature-content-text wow fadeInLeft mt-4 mt-xl-0">
+                        <h2>Discover a great collection of post variations</h2>
+                        <p>The Forum activity allows students and teachers to exchange ideas by posting comments as
+                            part of a 'thread'. Files such as images and media maybe included in forum posts. The
+                            teacher can choose to grade and/or rate forum posts and it is also possible to give
+                            students permission to rate each others' posts.</p>
+                        <hr>
+                        <h5>This is an incredible Forum</h5>
+                        <a href="#" class="dbl-arrow">
+                            <div class="arrow-cont">
+                                <i class="arrow_carrot-right first"></i>
+                                <i class="arrow_carrot-right second"></i>
+                            </div> Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Feature One Area =================-->
     <!--================Ama Statistics Area =================-->
     <section class="forum-statistics">
         <div class="container">
@@ -46,42 +82,59 @@
         </div>
     </section>
     <!--================End Ama Statistics Area =================-->
-    <!--================Feature One Area =================-->
-    <section class="feature-one">
-        <div class="container">
-            <div class="row align-items-center gy-4 gy-lg-0">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <div class="img-content">
-                        <img class="wow fadeInRight" data-wow-delay="0.1s" src="{{asset('assets/img/home_two/Post.png')}}" alt="post">
-                        <img class="wow fadeInLeft" data-wow-delay="0.2s" src="{{asset('assets/img/home_two/Comment.png')}}" alt="comment">
-                        <img class="bg-img" src="{{asset('assets/img/home_two/post-vaiation-bg.png')}}" alt="bg img">
-                        <img src="{{asset('assets/img/home_two/Subtract.png')}}" alt="shape">
-                        <img src="{{asset('assets/img/home_two/scribbles-scribbles-62.png')}}" alt="shape">
-                        <img src="{{asset('assets/img/home_two/scribbles-scribbles-2.png')}}" alt="shape">
-                    </div>
 
+    <!--================Category Area =================-->
+    <section class="forum-category-area pt-100 bg-disable pb-lg-115 pb-100">
+        <div class="container">
+            <h2 class="section-title-h2 text-center mb-60 text-center wow fadeinUp">Amas Categories</h2>
+            <div class="row gy-lg-0 gy-4 justify-content-center">
+                <div class="col-custom wow fadeInUp">
+                    <a href="#">
+                        <div class="single-category-widget">
+                            <img src="{{asset('assets/img/home_three/forum-catagory-01.svg')}}" alt="icon">
+                            <h5>Getting started</h5>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-lg-6 ps-lg-5">
-                    <div class="feature-content-text wow fadeInLeft mt-4 mt-xl-0">
-                        <h2>Discover a great collection of post variations</h2>
-                        <p>The Forum activity allows students and teachers to exchange ideas by posting comments as
-                            part of a 'thread'. Files such as images and media maybe included in forum posts. The
-                            teacher can choose to grade and/or rate forum posts and it is also possible to give
-                            students permission to rate each others' posts.</p>
-                        <hr>
-                        <h5>This is an incredible Forum</h5>
-                        <a href="#" class="dbl-arrow">
-                            <div class="arrow-cont">
-                                <i class="arrow_carrot-right first"></i>
-                                <i class="arrow_carrot-right second"></i>
-                            </div> Learn More
-                        </a>
-                    </div>
+                <div class="col-custom wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="#">
+                        <div class="single-category-widget">
+                            <img src="{{asset('assets/img/home_three/forum-catagory-02.svg')}}" alt="icon">
+                            <h5>Announcements</h5>
+                        </div>
+                    </a>
                 </div>
+                <div class="col-custom wow fadeInUp" data-wow-delay="0.5s">
+                    <a href="#">
+                        <div class="single-category-widget">
+                            <img src="{{asset('assets/img/home_three/forum-catagory-03.svg')}}" alt="icon">
+                            <h5>Authors</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-custom wow fadeInUp" data-wow-delay="0.7s">
+                    <a href="#">
+                        <div class="single-category-widget">
+                            <img src="{{asset('assets/img/home_three/forum-catagory-04.svg')}}" alt="icon">
+                            <h5>Customers</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-custom wow fadeInUp" data-wow-delay="0.9s">
+                    <a href="#">
+                        <div class="single-category-widget">
+                            <img src="{{asset('assets/img/home_three/forum-catagory-05.svg')}}" alt="icon">
+                            <h5>Technology</h5>
+                        </div>
+                    </a>
+                </div>
+
+
             </div>
+
         </div>
     </section>
-    <!--================End Feature One Area =================-->
+    <!--================End Category Area =================-->
     <!--================Call To Action Area =================-->
     <section class="call-to-action cta-bg-2">
         <div class="bg-shapes">
