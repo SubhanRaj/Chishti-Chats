@@ -1,42 +1,7 @@
 <x-layout>
     <x-slot:title>Home </x-slot:title>
     <x-banner />
-    <!--================Feature One Area =================-->
-    <section class="feature-one">
-        <div class="container">
-            <div class="row align-items-center gy-4 gy-lg-0">
-                <div class="col-lg-6 text-center text-lg-start">
-                    <div class="img-content">
-                        <img class="wow fadeInRight" data-wow-delay="0.1s" src="{{asset('assets/img/home_two/Post.png')}}" alt="post">
-                        <img class="wow fadeInLeft" data-wow-delay="0.2s" src="{{asset('assets/img/home_two/Comment.png')}}" alt="comment">
-                        <img class="bg-img" src="{{asset('assets/img/home_two/post-vaiation-bg.png')}}" alt="bg img">
-                        <img src="{{asset('assets/img/home_two/Subtract.png')}}" alt="shape">
-                        <img src="{{asset('assets/img/home_two/scribbles-scribbles-62.png')}}" alt="shape">
-                        <img src="{{asset('assets/img/home_two/scribbles-scribbles-2.png')}}" alt="shape">
-                    </div>
 
-                </div>
-                <div class="col-lg-6 ps-lg-5">
-                    <div class="feature-content-text wow fadeInLeft mt-4 mt-xl-0">
-                        <h2>Discover a great collection of post variations</h2>
-                        <p>The Forum activity allows students and teachers to exchange ideas by posting comments as
-                            part of a 'thread'. Files such as images and media maybe included in forum posts. The
-                            teacher can choose to grade and/or rate forum posts and it is also possible to give
-                            students permission to rate each others' posts.</p>
-                        <hr>
-                        <h5>This is an incredible Forum</h5>
-                        <a href="#" class="dbl-arrow">
-                            <div class="arrow-cont">
-                                <i class="arrow_carrot-right first"></i>
-                                <i class="arrow_carrot-right second"></i>
-                            </div> Learn More
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Feature One Area =================-->
     <!--================Ama Statistics Area =================-->
     <section class="forum-statistics">
         <div class="container">
@@ -83,58 +48,110 @@
     </section>
     <!--================End Ama Statistics Area =================-->
 
-    <!--================Category Area =================-->
-    <section class="forum-category-area pt-100 bg-disable pb-lg-115 pb-100">
+    <!--================Community Area =================-->
+    <section class="community-area bg-disable">
         <div class="container">
-            <h2 class="section-title-h2 text-center mb-60 text-center wow fadeinUp">Amas Categories</h2>
-            <div class="row gy-lg-0 gy-4 justify-content-center">
-                <div class="col-custom wow fadeInUp">
-                    <a href="#">
-                        <div class="single-category-widget">
-                            <img src="{{asset('assets/img/home_three/forum-catagory-01.svg')}}" alt="icon">
-                            <h5>Getting started</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-custom wow fadeInUp" data-wow-delay="0.3s">
-                    <a href="#">
-                        <div class="single-category-widget">
-                            <img src="{{asset('assets/img/home_three/forum-catagory-02.svg')}}" alt="icon">
-                            <h5>Announcements</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-custom wow fadeInUp" data-wow-delay="0.5s">
-                    <a href="#">
-                        <div class="single-category-widget">
-                            <img src="{{asset('assets/img/home_three/forum-catagory-03.svg')}}" alt="icon">
-                            <h5>Authors</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-custom wow fadeInUp" data-wow-delay="0.7s">
-                    <a href="#">
-                        <div class="single-category-widget">
-                            <img src="{{asset('assets/img/home_three/forum-catagory-04.svg')}}" alt="icon">
-                            <h5>Customers</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-custom wow fadeInUp" data-wow-delay="0.9s">
-                    <a href="#">
-                        <div class="single-category-widget">
-                            <img src="{{asset('assets/img/home_three/forum-catagory-05.svg')}}" alt="icon">
-                            <h5>Technology</h5>
-                        </div>
-                    </a>
-                </div>
-
-
+            <div class="d-flex justify-content-between mb-35 flex-wrap">
+                <h2 class="section-title-h2 mb-0">Community</h2>
+                <div><a href="#" class="doc_border_btn doc_border_btn_two sec-btn-blue mt-2">New Post</a></div>
             </div>
-
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Show topics</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Show all posts</button>
+                </li>
+            </ul>
+            <div class="tab-content mt-30" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="row gy-4 justify-content-center">
+                        @for ($i = 0; $i < 9; $i++)
+                            <div class="col-md-6 col-lg-4">
+                                <div class="community-topic-widget-box wow fadeInUp">
+                                    <img src="{{asset('assets/img/home_two/lightbulb.svg')}}" alt="icon">
+                                    <div class="box-content">
+                                        <a href="#">
+                                            <h5>Knowledge Base</h5>
+                                        </a>
+                                        <span>155 posts</span>
+                                        <span class="vr-line">|</span>
+                                        <span>21 followers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endfor
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5 mx-auto">
+                            <a href="#" class="dbl-arrow-upper show-more-btn show-more-round w-100 mt-70 wow fadeInUp">
+                                <div class="arrow-cont">
+                                    <i class="arrow_carrot-down first"></i>
+                                    <i class="arrow_carrot-down second"></i>
+                                </div> Show More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    @for($i = 1; $i <= 6; $i++)
+                        <div class="single-forum-post-widget wow fadeInUp" data-wow-delay="{{ ($i - 1) * 0.2 }}s">
+                            <div class="post-content">
+                                <div class="post-title">
+                                    <h6>
+                                        <a href="#">
+                                            This forum is a special forum for general announcements.
+                                        </a>
+                                        <span><i class="icon_check_alt2"></i></span>
+                                    </h6>
+                                </div>
+                                <div class="post-info">
+                                    <div class="author">
+                                        <img src="{{asset('assets/img/user-circle-alt.svg')}}" alt="icon">Zain Siphron
+                                    </div>
+                                    <div class="post-time">
+                                        <img src="{{asset('assets/img/time-outline.svg')}}" alt="">10 min ago
+                                    </div>
+                                    <div class="post-category">
+                                        <a href="#">
+                                            <img src="{{asset('assets/img/home_three/forum-catagory-02.svg')}}" alt="">Announcements
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="post-tags">
+                                    <div class="single-tag tag-jq">jQuery</div>
+                                    <div class="single-tag tag-php">Php</div>
+                                </div>
+                            </div>
+                            <div class="post-reach">
+                                <div class="post-view">
+                                    <img src="{{asset('assets/img/forum/eye-outline.svg')}}" alt="icon">591 Views
+                                </div>
+                                <div class="post-like">
+                                    <img src="{{asset('assets/img/forum/thumbs-up-outline.svg')}}" alt="icon">250 Likes
+                                </div>
+                                <div class="post-comment">
+                                    <img src="{{asset('assets/img/forum/chatbubbles-outline.svg')}}" alt="icon">155 Replies
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+                    <div class="row">
+                        <div class="col-sm-5 mx-auto">
+                            <a href="#" class="dbl-arrow-upper show-more-btn show-more-round w-100 mt-70 wow fadeInUp">
+                                <div class="arrow-cont">
+                                    <i class="arrow_carrot-down first"></i>
+                                    <i class="arrow_carrot-down second"></i>
+                                </div> Show More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!--================End Category Area =================-->
+    <!--================End Community Area =================-->
+
     <!--================Call To Action Area =================-->
     <section class="call-to-action cta-bg-2">
         <div class="bg-shapes">
@@ -149,13 +166,11 @@
             <div class="row action-content-wrapper gy-lg-0 gy-4">
                 <div class="col-lg-7 px-lg-0 text-lg-start text-center">
                     <div class="action-title-wrap title-img justify-content-lg-start justify-content-center">
-                        <h2 class="action-title title-2 ">Build your Connection</h2>
+                        <h2 class="action-title title-2 ">New Here? Join the Community!</h2>
                     </div>
-                    <p class="mb-0">connect with over 1 million cconstrustion professionals. Supports can be
-                        either at the
-                        end or
-                        at
-                        any intermediate point along a struuctural member or a constituent part.</p>
+                    <p class="mb-0">
+                        Connect with fellow students of our university and build a strong community together.
+                    </p>
                 </div>
                 <div class="col-lg-5 text-lg-end text-center">
                     <a href="#" class="action_btn"><i class="icon_group"></i> Join Community </a>
