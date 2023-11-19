@@ -70,6 +70,7 @@
                     <label class=" ball" for="something"></label>
                     <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
                 </div>
+
             </div>
         </div>
     </div>
