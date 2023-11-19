@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="entry-content">
                                     <h3 class="post-title">
-                                        <a href="forum-single.html">Workspace/Org Administration</a>
+                                        <a href="">Workspace/Org Administration</a>
                                     </h3>
                                     <ul class="meta">
                                         <li><img src="{{asset('assets/img/home_support/cmm1.png')}}" alt="cmm"><a href="#">WordPress
