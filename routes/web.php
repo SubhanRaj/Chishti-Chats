@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ViewsController;
 
 /*
@@ -15,10 +16,12 @@ use App\Http\Controllers\ViewsController;
 |
 */
 
-Route::get('/', [PostController::class, 'index'])->name('index');
+// Index Route
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 // Posts Routes
 Route::controller(PostController::class)->prefix('posts')->group(function(){
+    Route::get('/', 'index')->name('posts.index');
     Route::get('/create-new-post', 'create')->name('posts.create');
     Route::post('/create-new-post', 'store')->name('posts.store');
     Route::get('/{url_slug}', 'show')->name('posts.show');
@@ -30,5 +33,5 @@ Route::controller(PostController::class)->prefix('posts')->group(function(){
 
 // return 404 page if any route or url is not found
 Route::fallback(function(){
-    return view('404');
+    return view('pages.404');
 });
