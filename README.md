@@ -91,13 +91,20 @@ php artisan migrate
 ```bash
 php artisan db:seed
 ```
-9. Run the application:
+9. Run the artisan serve command:
 
 ```bash
 php artisan serve
 ```
 
-Now, you can access the application at `http://localhost:8000`.
+10. Run the npm watch command:
+
+```bash
+npm run watch
+```
+
+
+Now, you can access the application at `http://localhost:3000`.
 
 ## Contributing
 

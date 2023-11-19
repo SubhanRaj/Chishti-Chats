@@ -108,7 +108,7 @@
                         <div class="forum-comment">
                             <div class="forum-post-top">
                                 <a class="author-avatar" href="#">
-                                    <img src="img/forum/author-avatar.png" alt="author avatar">
+                                    <img src="{{asset('assets/img/forum/author-avatar.png')}}" alt="author avatar">
                                 </a>
                                 <div class="forum-post-author">
                                     <a class="author-name" href="#">Eh Jewel</a>
@@ -141,7 +141,7 @@
                         <div class="forum-comment">
                             <div class="forum-post-top">
                                 <a class="author-avatar" href="#">
-                                    <img src="img/forum/author-avatar-2.jpg" alt="author avatar">
+                                    <img src="{{asset('assets/img/forum/author-avatar-2.jpg')}}" alt="author avatar">
                                 </a>
                                 <div class="forum-post-author">
                                     <a class="author-name" href="#">Parsley Montana</a>
@@ -172,7 +172,7 @@
                         <div class="forum-comment">
                             <div class="forum-post-top">
                                 <a class="author-avatar" href="#">
-                                    <img src="img/forum/author-avatar-3.jpg" alt="author avatar">
+                                    <img src="{{asset('assets/img/forum/author-avatar-3.jpg')}}" alt="author avatar">
                                 </a>
                                 <div class="forum-post-author">
                                     <a class="author-name" href="#">Giles Posture</a>
@@ -204,7 +204,7 @@
                         <div class="forum-comment">
                             <div class="forum-post-top">
                                 <a class="author-avatar" href="#">
-                                    <img src="img/forum/author-avatar.png" alt="author avatar">
+                                    <img src="{{asset('assets/img/forum/author-avatar.png')}}" alt="author avatar">
                                 </a>
                                 <div class="forum-post-author">
                                     <a class="author-name" href="#">Norman Gordon</a>

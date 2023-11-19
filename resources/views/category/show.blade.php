@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-        Categories
+        {{ $category->category_name }}
     </x-slot:title>
     <x-search />
     <!--================Forum Breadcrumb Area =================-->
