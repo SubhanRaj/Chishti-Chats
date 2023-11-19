@@ -15,7 +15,7 @@
                     <a href="{{ route('posts.index')}}" class="nav-link">Posts</a>
                 </li>
                 <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
-                    <a href="#" class="nav-link">Categories</a>
+                    <a href="{{route('categories.index')}}" class="nav-link">Categories</a>
                 </li>
                 <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
                     <a href="#" class="nav-link">Contact</a>

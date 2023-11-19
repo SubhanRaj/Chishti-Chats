@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\IndexController;
@@ -18,6 +19,16 @@ use App\Http\Controllers\ViewsController;
 
 // Index Route
 Route::get('/', [IndexController::class, 'index'])->name('index');
+
+// Categories Routes
+Route::controller(CategoryController::class)->prefix('categories')->group(function(){
+    Route::get('/', 'index')->name('categories.index');
+    Route::get('/create-new-category', 'create')->name('categories.create');
+    Route::post('/create-new-category', 'store')->name('categories.store');
+    Route::get('/{category}/edit', 'edit')->name('categories.edit');
+    Route::put('/{category}', 'update')->name('categories.update');
+    Route::delete('/{category}', 'destroy')->name('categories.destroy');
+});
 
 // Posts Routes
 Route::controller(PostController::class)->prefix('posts')->group(function(){
