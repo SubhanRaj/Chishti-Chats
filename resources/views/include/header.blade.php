@@ -12,19 +12,7 @@
                     <a href="{{ route('index')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item dropdown submenu">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pages
-                    </a>
-                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-bs-toggle="dropdown"></i>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item"><a href="Layout_Header-Search-1.html" class="nav-link">Header
-                                Layout 01</a></li>
-                        <li class="nav-item"><a href="Layout_Header-Search-2.html" class="nav-link">Header
-                                Layout 02</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                        <li class="nav-item"><a href="typography.html" class="nav-link">Typography</a></li>
-                        <li class="nav-item"><a href="404-error.html" class="nav-link">404 Error</a></li>
-                    </ul>
+                    <a href="{{ route('posts.index')}}" class="nav-link">Posts</a>
                 </li>
                 <li class="nav-item dropdown submenu">
                     <a class="nav-link dropdown-toggle" href="forums.html" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
