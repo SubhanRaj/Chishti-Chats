@@ -8,42 +8,17 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav menu ms-auto">
-                <li class="nav-item active">
+                <li class="nav-item {{ request()->is('/') ? 'active' : '' }}">
                     <a href="{{ route('index')}}" class="nav-link">Home</a>
                 </li>
-                <li class="nav-item dropdown submenu">
+                <li class="nav-item {{ request()->is('posts') ? 'active' : '' }}">
                     <a href="{{ route('posts.index')}}" class="nav-link">Posts</a>
                 </li>
-                <li class="nav-item dropdown submenu">
-                    <a class="nav-link dropdown-toggle" href="forums.html" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Forum
-                    </a>
-                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-bs-toggle="dropdown"></i>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item"><a href="forums.html" class="nav-link">Forums Root</a></li>
-                        <li class="nav-item"><a href="forum-topics.html" class="nav-link">Forum Topics</a></li>
-                        <li class="nav-item"><a href="forum-topics-2.html" class="nav-link">Forum Topics Two</a>
-                        </li>
-                        <li class="nav-item"><a href="forum-single.html" class="nav-link">Topic Details</a></li>
-                        <li class="nav-item"><a href="forum-profile.html" class="nav-link">User Profile</a></li>
-                        <li class="nav-item"><a href="add-question.html" class="nav-link">Add Question</a></li>
-                        <li class="nav-item"><a href="user-list.html" class="nav-link">User List</a></li>
-                        <li class="nav-item"><a href="user-details.html" class="nav-link">User Details</a></li>
-                        <li class="nav-item"><a href="badges.html" class="nav-link">User Badges</a></li>
-                    </ul>
+                <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
+                    <a href="#" class="nav-link">Categories</a>
                 </li>
-                <li class="nav-item dropdown submenu">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Blog
-                    </a>
-                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="false" data-bs-toggle="dropdown"></i>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item"><a href="blog-grid.html" class="nav-link">Blog Grid</a></li>
-                        <li class="nav-item"><a href="blog-grid-two.html" class="nav-link">Blog Grid Two</a>
-                        </li>
-                        <li class="nav-item"><a href="blog-list.html" class="nav-link">Blog List</a></li>
-                        <li class="nav-item"><a href="blog-single.html" class="nav-link">Blog Details</a></li>
-                    </ul>
+                <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
+                    <a href="#" class="nav-link">Contact</a>
                 </li>
             </ul>
             <div class="right-nav">
