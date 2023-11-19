@@ -22,7 +22,7 @@
                 </li>
             </ul>
             <div class="right-nav">
-                <a class="action_btn btn_small_two btn-text-medium round-btn-2" href="#">Sign In</a>
+                <a class="action_btn btn_small_two btn-text-medium round-btn-2" href="{{route('login')}}">Sign In</a>
                 <div class="px-2 js-darkmode-btn" title="Toggle dark mode">
                     <label for="something" class="tab-btn tab-btns">
                         <ion-icon name="moon"></ion-icon>

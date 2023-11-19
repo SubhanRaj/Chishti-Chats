@@ -20,10 +20,8 @@
         </div>
     </div>
     <div class="body_wrapper">
-       
-            <!-- content -->
-            {{ $slot }}
-        
+        <!-- content -->
+        {{ $slot }}
     </div>
     <!-- scripts -->
     @include('include.scripts')
