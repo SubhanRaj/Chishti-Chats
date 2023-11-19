@@ -1,7 +1,7 @@
 <h1 align="center">Chishti Chats</h1>
 <p align="center"><i>Chat Forum for Khwaja Moinuddin Chishti Language Univeristy</i></p>
 
-<p align="center"><a href="#" target="_blank"><img src="public/assets/images/logo/logo-full.png" width="400" alt="Chishti Chats Logo"></a></p>
+<p align="center"><a href="#" target="_blank"><img src="public/assets/img/logo/logo-full.png" width="400" alt="Chishti Chats Logo"></a></p>
 
 <div align="center">
   <a href="https://github.com/SubhanRaj/Chishti-Chats/stargazers"><img src="https://img.shields.io/github/stars/SubhanRaj/Chishti-Chats" alt="Stars Badge"/></a>
