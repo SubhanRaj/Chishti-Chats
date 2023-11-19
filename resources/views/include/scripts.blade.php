@@ -10,5 +10,6 @@
 <script src="{{asset('assets/vendor/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 <script src="{{asset('assets/vendor/counterup/jquery.waypoints.min.js')}}"></script>
 <script src="{{asset('assets/vendor/counterup/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('assets/vendor/dropzone/dropzone.min.js')}}"></script>
 <script src="{{asset('assets/js/plugins.js')}}"></script>
 <script src="{{asset('assets/js/main.js')}}"></script>

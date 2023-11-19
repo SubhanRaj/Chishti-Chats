@@ -22,4 +22,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/mcustomscrollbar/jquery.mCustomScrollbar.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style-main.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+
+    <!-- dropzone css-->
+    <link rel="stylesheet" href="{{asset('assets/vendor/dropzone/dropzone.css')}}" />
 </head>
