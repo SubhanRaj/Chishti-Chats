@@ -35,4 +35,10 @@ class IndexController extends Controller
     {
         return view('auth.register');
     }
+
+    // user profile page
+    public function profile()
+    {
+        return view('pages.profile');
+    }
 }

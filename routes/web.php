@@ -48,6 +48,8 @@ Route::get('/register', [IndexController::class, 'register'])->name('register');
 Route::get('/forgot-password', [IndexController::class, 'forgotPassword'])->name('forgot-password');
 Route::get('/reset-password', [IndexController::class, 'resetPassword'])->name('reset-password');
 
+// user profile routes
+Route::get('/profile', [IndexController::class, 'profile'])->name('profile');
 // return 404 page if any route or url is not found
 Route::fallback(function(){
     return view('pages.404');

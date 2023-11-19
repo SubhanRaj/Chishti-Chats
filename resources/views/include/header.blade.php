@@ -17,8 +17,8 @@
                 <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
                     <a href="{{route('categories.index')}}" class="nav-link">Categories</a>
                 </li>
-                <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
-                    <a href="#" class="nav-link">Contact</a>
+                <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}">
+                    <a href="{{route('profile')}}" class="nav-link">User Profile</a>
                 </li>
             </ul>
             <div class="right-nav">
@@ -95,8 +95,8 @@
                 <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
                     <a href="{{route('categories.index')}}" class="nav-link">Categories</a>
                 </li>
-                <li class="nav-item {{ request()->is('contact') ? 'active' : '' }}">
-                    <a href="#" class="nav-link">Contact</a>
+                <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}">
+                    <a href="{{route('profile')}}" class="nav-link">User Profile</a>
                 </li>
             </ul>
         </nav>
