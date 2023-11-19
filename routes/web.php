@@ -42,6 +42,11 @@ Route::controller(PostController::class)->prefix('posts')->group(function(){
     Route::delete('/{post}', 'destroy')->name('posts.destroy');
 });
 
+// auth routes
+Route::get('/login', [IndexController::class, 'login'])->name('login');
+Route::get('/register', [IndexController::class, 'register'])->name('register');
+Route::get('/forgot-password', [IndexController::class, 'forgotPassword'])->name('forgot-password');
+Route::get('/reset-password', [IndexController::class, 'resetPassword'])->name('reset-password');
 
 // return 404 page if any route or url is not found
 Route::fallback(function(){

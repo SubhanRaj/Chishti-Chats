@@ -17,8 +17,10 @@ class IndexController extends Controller
         $total_posts = Post::count();
         // return top 9 categories
         $categories = Category::orderBy('created_at', 'desc')->take(9)->get();
+        // count of total categories
+        $total_categories = Category::count();
         
-        return view('pages.index', compact('posts', 'total_posts'));
+        return view('pages.index', compact('posts', 'total_posts', 'categories', 'total_categories'));
         
     }
 

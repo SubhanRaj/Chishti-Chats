@@ -24,7 +24,7 @@
                                 <img src="{{asset('assets/img/home_two/icon-2.svg')}}" alt="icon">
                                 <div>
                                     <h4 class="counter">
-                                        <!-- total database post count -->
+
                                         {{ $total_posts }}
                                     </h4>
                                     <p>posts</p>
@@ -33,10 +33,14 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="statistics-widget wow fadeInRight justify-content-center justify-content-sm-start" data-wow-delay="0.6s">
-                                <img src="{{asset('assets/img/home_two/icon-3.svg')}}" alt="icon">
+                                <img src="{{asset('assets/img/home_two/category.png')}}" width="50px" alt="icon">
                                 <div>
-                                    <h4 class="counter">255</h4>
-                                    <p>online</p>
+                                    <h4 class="counter">
+                                        {{ $total_categories }}
+                                    </h4>
+                                    <p>
+                                        categories
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -69,87 +73,88 @@
             <div class="tab-content mt-30" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row gy-4 justify-content-center">
-                        @for ($i = 0; $i < 9; $i++) <div class="col-md-6 col-lg-4">
+                        @foreach ( $categories as $category )
+                        <div class="col-md-6 col-lg-4">
                             <div class="community-topic-widget-box wow fadeInUp">
                                 <img src="{{asset('assets/img/home_two/lightbulb.svg')}}" alt="icon">
                                 <div class="box-content">
-                                    <a href="#">
-                                        <h5>Knowledge Base</h5>
+                                    <a href="{{route('categories.show', $category->url_slug)}}">
+                                        <h5>
+                                            {{$category->category_name}}
+                                        </h5>
                                     </a>
                                     <span>155 posts</span>
-                                    <span class="vr-line">|</span>
-                                    <span>21 followers</span>
                                 </div>
                             </div>
+                        </div>
+                        @endforeach
                     </div>
-                    @endfor
+                    <div class="row">
+                        <div class="col-sm-5 mx-auto">
+                            <a href="{{route('categories.index')}}" class="dbl-arrow-upper show-more-btn show-more-round w-100 mt-70 wow fadeInUp">
+                                <div class="arrow-cont">
+                                    <i class="arrow_carrot-down first"></i>
+                                    <i class="arrow_carrot-down second"></i>
+                                </div> Show More
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-5 mx-auto">
-                        <a href="#" class="dbl-arrow-upper show-more-btn show-more-round w-100 mt-70 wow fadeInUp">
-                            <div class="arrow-cont">
-                                <i class="arrow_carrot-down first"></i>
-                                <i class="arrow_carrot-down second"></i>
-                            </div> Show More
-                        </a>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    @foreach($posts as $post)
+                    <div class="single-forum-post-widget wow fadeInUp" data-wow-delay="{{ ($loop->index + 1) * 0.2 }}s">
+                        <div class="post-content">
+                            <div class="post-title">
+                                <h6>
+                                    <a href="{{route('posts.show', $post->url_slug)}}">
+                                        {{$post->title}}
+                                    </a>
+                                    <span><i class="icon_check_alt2"></i></span>
+                                </h6>
+                            </div>
+                            <div class="post-info">
+                                <div class="author">
+                                    <img src="{{asset('assets/img/user-circle-alt.svg')}}" alt="icon">Zain Siphron
+                                </div>
+                                <div class="post-time">
+                                    <img src="{{asset('assets/img/time-outline.svg')}}" alt="">{{ $post->created_at->diffForHumans() }}
+                                </div>
+                                <div class="post-category">
+                                    <a href="#">
+                                        <img src="{{asset('assets/img/home_three/forum-catagory-02.svg')}}" alt="">Announcements
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="post-tags">
+                                <div class="single-tag tag-jq">jQuery</div>
+                                <div class="single-tag tag-php">Php</div>
+                            </div>
+                        </div>
+                        <div class="post-reach">
+                            <div class="post-view">
+                                <img src="{{asset('assets/img/forum/eye-outline.svg')}}" alt="icon">591 Views
+                            </div>
+                            <div class="post-like">
+                                <img src="{{asset('assets/img/forum/thumbs-up-outline.svg')}}" alt="icon">250 Likes
+                            </div>
+                            <div class="post-comment">
+                                <img src="{{asset('assets/img/forum/chatbubbles-outline.svg')}}" alt="icon">155 Replies
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <div class="row">
+                        <div class="col-sm-5 mx-auto">
+                            <a href="{{route('posts.index')}}" class="dbl-arrow-upper show-more-btn show-more-round w-100 mt-70 wow fadeInUp">
+                                <div class="arrow-cont">
+                                    <i class="arrow_carrot-down first"></i>
+                                    <i class="arrow_carrot-down second"></i>
+                                </div> Show More
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                @foreach($posts as $post)
-                <div class="single-forum-post-widget wow fadeInUp" data-wow-delay="{{ ($loop->index + 1) * 0.2 }}s">
-                    <div class="post-content">
-                        <div class="post-title">
-                            <h6>
-                                <a href="{{route('posts.show', $post->url_slug)}}">
-                                    {{$post->title}}
-                                </a>
-                                <span><i class="icon_check_alt2"></i></span>
-                            </h6>
-                        </div>
-                        <div class="post-info">
-                            <div class="author">
-                                <img src="{{asset('assets/img/user-circle-alt.svg')}}" alt="icon">Zain Siphron
-                            </div>
-                            <div class="post-time">
-                                <img src="{{asset('assets/img/time-outline.svg')}}" alt="">{{ $post->created_at->diffForHumans() }}
-                            </div>
-                            <div class="post-category">
-                                <a href="#">
-                                    <img src="{{asset('assets/img/home_three/forum-catagory-02.svg')}}" alt="">Announcements
-                                </a>
-                            </div>
-                        </div>
-                        <div class="post-tags">
-                            <div class="single-tag tag-jq">jQuery</div>
-                            <div class="single-tag tag-php">Php</div>
-                        </div>
-                    </div>
-                    <div class="post-reach">
-                        <div class="post-view">
-                            <img src="{{asset('assets/img/forum/eye-outline.svg')}}" alt="icon">591 Views
-                        </div>
-                        <div class="post-like">
-                            <img src="{{asset('assets/img/forum/thumbs-up-outline.svg')}}" alt="icon">250 Likes
-                        </div>
-                        <div class="post-comment">
-                            <img src="{{asset('assets/img/forum/chatbubbles-outline.svg')}}" alt="icon">155 Replies
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-                <div class="row">
-                    <div class="col-sm-5 mx-auto">
-                        <a href="{{route('posts.index')}}" class="dbl-arrow-upper show-more-btn show-more-round w-100 mt-70 wow fadeInUp">
-                            <div class="arrow-cont">
-                                <i class="arrow_carrot-down first"></i>
-                                <i class="arrow_carrot-down second"></i>
-                            </div> Show More
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
     <!--================End Community Area =================-->
