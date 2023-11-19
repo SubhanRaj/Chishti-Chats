@@ -26,3 +26,9 @@ Route::controller(PostController::class)->prefix('posts')->group(function(){
     Route::put('/{post}', 'update')->name('posts.update');
     Route::delete('/{post}', 'destroy')->name('posts.destroy');
 });
+
+
+// return 404 page if any route or url is not found
+Route::fallback(function(){
+    return view('404');
+});
