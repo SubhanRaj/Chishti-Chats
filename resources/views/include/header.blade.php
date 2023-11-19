@@ -49,7 +49,7 @@
                     </span>
                 </span>
             </button>
-            <a class="navbar-brand header_logo" href="{{ route('index')}} }}">
+            <a class="navbar-brand header_logo" href="{{ route('index')}}">
                 <img class="sticky_logo " src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
                 <img class="main_logo white_logo" src="{{asset('assets/img/logo/logo-full.png')}}" height="75px" alt="logo">
             </a>
