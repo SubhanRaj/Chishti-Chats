@@ -173,22 +173,16 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="col-lg-2">
-                                <div class="input-group go_btn">
-                                    <input type="number" class="form-control" aria-label="Recipient's username">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button">Go</button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4">
                     <div class="right_side_forum">
                         <aside class="r_widget qustion_wd">
-                            <button class="btn" type="button"><img src="{{asset('assets/img/forum/helpful-user/question-1.png')}}" alt="">Ask Question <i class="arrow_carrot-right"></i></button>
-                        </aside>
+                            <button class="btn" type="button" onclick="window.location.href='{{ route('posts.create') }}'">
+                                <img src="{{ asset('assets/img/forum/helpful-user/question-1.png') }}" alt="">Ask Question <i class="arrow_carrot-right"></i>
+                            </button>
+                            </aside>
                         <aside class="r_widget question_list_wd">
                             <div class="r_heading d-flex justify-content-between">
                                 <h3>Top</h3>

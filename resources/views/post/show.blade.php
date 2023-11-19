@@ -30,7 +30,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4">
                             <div class="action-button-container">
-                                <a href="#" class="action_btn btn-ans ask-btn">Ask Question</a>
+                                <a href="{{route('posts.create')}}" class="action_btn btn-ans ask-btn">Ask Question</a>
                             </div>
                         </div>
                     </div>
