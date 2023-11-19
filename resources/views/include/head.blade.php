@@ -5,6 +5,8 @@
     <meta name="keywords" content="Chishti Chats">
     <meta name="description" content="Chishti Chats">
     <meta name="author" content="Chishti Chats">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="theme-color" content="#6b707f">
     <!-- Favicon -->
     <link rel="icon" href="{{asset('assets/img/favicon/favicon.ico')}}" type="image/x-icon">
     <title> {{ $title}} | {{ config('app.name')}} </title>
