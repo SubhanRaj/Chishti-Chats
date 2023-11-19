@@ -37,9 +37,12 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Category $category)
+    public function show($url_slug)
     {
-        //
+        // get the category by matching the url_slug
+        $category = Category::where('url_slug', $url_slug)->firstOrFail();
+        // return view with category
+        return view('category.show', compact('category'));
     }
 
     /**
@@ -47,7 +50,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+    
     }
 
     /**
