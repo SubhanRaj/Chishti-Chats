@@ -8,18 +8,13 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                        <li class="breadcrumb-item @if(request()->is($url)) active @endif" aria-current="page">
-                            @if(isset($url))
-                            <a href="{{ $url }}">{{ $title }}</a>
-                            @else
-                            {{ $title }}
-                            @endif
-                        </li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="#">Posts</a></li>
                     </ol>
                 </nav>
             </div>
             <div class="col-sm-5">
-                <a href="#" class="date"><i class="icon_clock_alt"></i> Updated on {{ date('d M, Y') }}</a>
+                <a href="#" class="date"><i class="icon_clock_alt"></i> Updated on {{ date('d M, Y') }}
+            </a>
             </div>
         </div>
     </div>
