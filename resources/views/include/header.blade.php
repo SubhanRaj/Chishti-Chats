@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav menu ms-auto">
                 <li class="nav-item active">
-                    <a href="{{ route('index')}}" class="nav-link dropdown-toggle">Home</a>
+                    <a href="{{ route('index')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item dropdown submenu">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -123,16 +123,8 @@
     <div class="mobile_nav_wrapper">
         <nav class="mobile_nav_top">
             <ul class="navbar-nav menu ms-auto">
-                <li class="nav-item dropdown submenu active">
-                    <a href="index-2.html" class="nav-link dropdown-toggle">Home</a>
-                    <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item active"><a href="index-2.html" class="nav-link">Demo 01</a></li>
-                        <li class="nav-item"><a href="index-3.html" class="nav-link">Demo 02</a></li>
-                        <li class="nav-item "><a href="index-4.html" class="nav-link">Demo 03</a></li>
-                        <li class="nav-item "><a href="index-5.html" class="nav-link">Demo 04</a></li>
-                        <li class="nav-item "><a href="index-6.html" class="nav-link">Demo 05</a></li>
-                    </ul>
+                <li class="nav-item active">
+                    <a href="{{ route('index')}}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item dropdown submenu">
                     <a class="nav-link dropdown-toggle" href="#">
