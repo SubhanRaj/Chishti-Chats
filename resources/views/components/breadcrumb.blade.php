@@ -1,5 +1,4 @@
 <!--================Forum Breadcrumb Area =================-->
-@props(['title', 'url'])
 
 <section class="page_breadcrumb">
     <div class="container-fluid pl-60 pr-60">

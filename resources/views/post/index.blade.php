@@ -3,7 +3,28 @@
         {{ __('Posts') }}
     </x-slot:title>
     <x-search />
-    <x-breadcrumb />
+    <!--================Forum Breadcrumb Area =================-->
+
+    <section class="page_breadcrumb">
+        <div class="container-fluid pl-60 pr-60">
+            <div class="row">
+                <div class="col-sm-7">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="#">Posts</a></li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-sm-5">
+                    <a href="#" class="date"><i class="icon_clock_alt"></i> Updated on {{ date('d M, Y') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--================End Forum Breadcrumb Area =================-->
 
     <!--================Forum Body Area =================-->
     <section class="forum_sidebar_area" id="sticky_doc">
@@ -33,8 +54,7 @@
                         <aside class="l_widget comment_list">
                             <h3 class="wd_title">Recent Topics</h3>
                             <ul class="navbar-nav">
-                                @for ($i = 0; $i < 5; $i++) 
-                                <li>
+                                @for ($i = 0; $i < 5; $i++) <li>
                                     <div class="media">
                                         <div class="d-flex">
                                             <i class="icon_chat_alt"></i>
@@ -50,7 +70,7 @@
                                         </div>
                                     </div>
                                     </li>
-                                @endfor
+                                    @endfor
                             </ul>
                         </aside>
                     </div>
@@ -182,7 +202,7 @@
                             <button class="btn" type="button" onclick="window.location.href='{{ route('posts.create') }}'">
                                 <img src="{{ asset('assets/img/forum/helpful-user/question-1.png') }}" alt="">Ask Question <i class="arrow_carrot-right"></i>
                             </button>
-                            </aside>
+                        </aside>
                         <aside class="r_widget question_list_wd">
                             <div class="r_heading d-flex justify-content-between">
                                 <h3>Top</h3>
@@ -209,7 +229,7 @@
                                         @for($i = 0; $i < 5; $i++) <li>
                                             <a href="#"><span>{{$i+1}}</span>Example of NearBy Place Search - SITE KIT</a>
                                             </li>
-                                        @endfor
+                                            @endfor
                                     </ul>
                                 </div>
                             </div>

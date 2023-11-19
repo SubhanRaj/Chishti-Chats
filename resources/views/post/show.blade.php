@@ -3,7 +3,31 @@
         {{ $post->title }}
     </x-slot:title>
     <x-search />
-    <x-breadcrumb />
+    <!--================Forum Breadcrumb Area =================-->
+
+    <section class="page_breadcrumb">
+        <div class="container-fluid pl-60 pr-60">
+            <div class="row">
+                <div class="col-sm-7">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="{{route('posts.index')}}">Posts</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a href="#">
+                                    {{ $post->title }}
+                            </a></li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-sm-5">
+                    <a href="#" class="date"><i class="icon_clock_alt"></i> Updated on {{ date('d M, Y') }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--================End Forum Breadcrumb Area =================-->
     <section class="doc_blog_grid_area sec_pad forum-single-content">
         <div class="container">
             <div class="row">
@@ -47,14 +71,14 @@
                             <p>
                                 {{ $post->content }}
                             </p>
-                            
+
                         </div>
                         <div class="forum-post-btm">
                             <div class="taxonomy forum-post-tags">
                                 <i class="icon_tags_alt"></i>
                                 <!-- get tags, seprate them by spaces in between by adding it to array -->
                                 @foreach (explode(' ', $post->tags) as $tag)
-                                    <a href="#">{{ $tag }}</a>,
+                                <a href="#">{{ $tag }}</a>,
                                 @endforeach
                             </div>
                         </div>
@@ -64,7 +88,7 @@
                         </div>
                     </div>
 
-    
+
 
                     <!-- All answer -->
                     <div class="all-answers">
@@ -235,9 +259,8 @@
                         <div class="widget tag_widget">
                             <h4 class="c_head">Tags</h4>
                             <ul class="list-unstyled w_tag_list style-light">
-                                @for($i = 0; $i < 10; $i++)
-                                    <li><a href="#">Laravel</a></li>
-                                @endfor
+                                @for($i = 0; $i < 10; $i++) <li><a href="#">Laravel</a></li>
+                                    @endfor
                             </ul>
                         </div>
 
