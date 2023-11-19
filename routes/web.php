@@ -25,6 +25,7 @@ Route::controller(CategoryController::class)->prefix('categories')->group(functi
     Route::get('/', 'index')->name('categories.index');
     Route::get('/create-new-category', 'create')->name('categories.create');
     Route::post('/create-new-category', 'store')->name('categories.store');
+    Route::get('/{url_slug}', 'show')->name('categories.show');
     Route::get('/{category}/edit', 'edit')->name('categories.edit');
     Route::put('/{category}', 'update')->name('categories.update');
     Route::delete('/{category}', 'destroy')->name('categories.destroy');

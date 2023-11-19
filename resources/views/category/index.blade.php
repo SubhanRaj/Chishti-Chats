@@ -64,7 +64,7 @@
                     <!-- /.post-header -->
 
                     <div class="community-posts-wrapper bb-radius">
-                        @for($i = 0; $i < 10; $i++)
+                        @foreach ( $categories as $category )
                         <!-- Forum Item -->
                         <div class="community-post style-two forum-item bug">
                             <div class="col-md-6 post-content">
@@ -72,8 +72,11 @@
                                     <img src="{{asset('assets/img/home_support/rc1.png')}}" alt="community post">
                                 </div>
                                 <div class="entry-content">
-                                    <a href="forum-topics.html">
-                                        <h3 class="post-title"> Announcements </h3>
+                                    <a href="{{ route('categories.show', $category->url_slug) }}">
+                                        <h3 class="post-title">
+                                            {{ $category->category_name }}
+
+                                        </h3>
                                     </a>
                                     <p>This forum is a special forum for general announcements.</p>
                                 </div>
@@ -105,7 +108,7 @@
                             </div>
                         </div>
                         <!-- /.forum-item  -->
-                        @endfor
+                        @endforeach
                     </div>
                     <!-- /.community-posts-wrapper -->
                 </div>
