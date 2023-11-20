@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
     <!--favicon-->
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/png" />
+    <link rel="icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" type="image/png" />
     <!--plugins-->
     <link href="{{ asset('admin-assets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <link href="{{ asset('admin-assets/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
