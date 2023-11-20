@@ -165,22 +165,7 @@ initServerSideDataTable(
 
 // Blog Started
 
-let blogColumn = [
-    "cat_id",
-    "title",
-    "route_name",
-    "main_pic",
-    "popular",
-    "status",
-];
-let Trash_blogColumn = blogColumn;
-initServerSideDataTable(
-    "blog-table",
-    "/admin/blog-datatable-data",
-    "blog-selected",
-    createColumn(blogColumn),
-    "blog-table-action"
-);
+
 // Blog Ended
 
 // comment column started

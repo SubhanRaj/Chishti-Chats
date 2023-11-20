@@ -63,14 +63,18 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('admin.adminBlogCategory') }}">
+                    <a href="{{ route('admin.adminPostCategory') }}">
                         <div class="parent-icon"><i class='bx bx-home-circle'></i>
                         </div>
                         <div class="menu-title">Category</div>
                     </a>
                 </li>
+                <a class="nav-link" href="{{ route('admin.showTag') }}">
+                    <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                                class="fas fa-tag"></span></span><span class="nav-link-text ps-1">Tag</span></div>
+                </a>
                 <li>
-                    <a href="{{ route('admin.viewblogs') }}">
+                    <a href="{{ route('admin.viewPosts') }}">
                         <div class="parent-icon"><i class="fa-solid fa-blog"></i>
                         </div>
                         <div class="menu-title">Posts</div>
@@ -148,7 +152,7 @@
                             <img src="{{ asset('admin-assets/assets/images/icons/profile.png') }}" class="user-img"
                                 alt="user avatar">
                             <div class="user-info ps-3">
-                                <p class="user-name mb-0">Adabkari</p>
+                                <p class="user-name mb-0">Chisti Chats</p>
                                 {{-- <p class="designattion mb-0">Digital Marketing Agency</p> --}}
                             </div>
                         </a>

@@ -3,35 +3,35 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\BlogCategoryModel;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
 
-class BlogCategoryController extends Controller
+class Admin_PostCategoryController extends Controller
 {
     public function index()
     {
-        $data = BlogCategoryModel::orderBy('id', 'desc')->get();
-        return view('admin.blog-category')->with(compact('data'));
+        $data = Category::orderBy('id', 'desc')->get();
+        return view('admin.post-category')->with(compact('data'));
     }
     public function save(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'category_name' => 'required',
-            'slug' => 'required|unique:blog_category,slug'
+            'slug' => 'required|unique:categories,slug'
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'status' => false,
                 'errors' => $validator->errors(),
-                'message' => 'Failed to add blog category. Please try again',
+                'message' => 'Failed to add  category. Please try again',
                 'redirect' => '0'
             ]);
         } else {
-            $cat_name = trim($request->category_name);
-            $checkCat = BlogCategoryModel::where('cat_name', '=', "$cat_name")->get();
+            $category_name = trim($request->category_name);
+            $checkCat = Category::where('category_name', '=', "$category_name")->get();
             if (count($checkCat) != 0) {
                 return response()->json([
                     'status' => false,
@@ -40,9 +40,9 @@ class BlogCategoryController extends Controller
                     'redirect' => '0'
                 ]);
             } else {
-                $data = new BlogCategoryModel();
-                $data->cat_id = uid_generator();
-                $data->cat_name = strtolower(trim($request->category_name));
+                $data = new Category();
+
+                $data->category_name = strtolower(trim($request->category_name));
                 $data->slug = strtolower(trim($request->slug));
 
                 $save_status = $data->save();
@@ -51,14 +51,14 @@ class BlogCategoryController extends Controller
                     return response()->json([
                         'status' => true,
                         'errors' => "",
-                        'message' => 'Blog category added successfully.',
+                        'message' => ' category added successfully.',
                         'redirect' => '0'
                     ]);
                 } else {
                     return response()->json([
                         'status' => false,
                         'errors' => '',
-                        'message' => 'Failed to add blog category. Please try again.',
+                        'message' => 'Failed to add  category. Please try again.',
                         'redirect' => '0'
                     ]);
                 }
@@ -68,28 +68,28 @@ class BlogCategoryController extends Controller
 
     public function show($id)
     {
-        $data = BlogCategoryModel::where('id', '=', $id)->get();
-        return view('admin.blog-edit-category')->with(compact('data'));
+        $data = Category::where('id', '=', $id)->get();
+        return view('admin.post-edit-category')->with(compact('data'));
     }
 
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
             'category_name' => 'required',
-            'slug' => "required|unique:blog_category,slug,$id"
+            'slug' => "required|unique:categories,slug,$id"
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'status' => false,
                 'errors' => $validator->errors(),
-                'message' => 'Failed to update blog category. Please try again',
+                'message' => 'Failed to update  category. Please try again',
                 'redirect' => '0'
             ]);
         } else {
-            $data = BlogCategoryModel::where('id', '=', $id)->get();
+            $data = Category::where('id', '=', $id)->get();
 
-            $data[0]->cat_name = strtolower(trim($request->category_name));
+            $data[0]->category_name = strtolower(trim($request->category_name));
             $data[0]->slug = strtolower(trim($request->slug));
 
             $save_status = $data[0]->save();
@@ -98,14 +98,14 @@ class BlogCategoryController extends Controller
                 return response()->json([
                     'status' => true,
                     'errors' => "",
-                    'message' => 'Blog category updated successfully.',
+                    'message' => ' category updated successfully.',
                     'redirect' => '0'
                 ]);
             } else {
                 return response()->json([
                     'status' => false,
                     'errors' => '',
-                    'message' => 'Failed to update blog category. Please try again.',
+                    'message' => 'Failed to update  category. Please try again.',
                     'redirect' => '0'
                 ]);
             }
@@ -115,11 +115,11 @@ class BlogCategoryController extends Controller
     public function showPostCategory(Request $request)
     {
         if ($request->ajax()) {
-            $data =  BlogCategoryModel::orderBy('id','desc')->get();
+            $data = Category::orderBy('id', 'desc')->get();
             return DataTables::of($data)->addIndexColumn()
                 ->addColumn('action', function ($data) {
                     $id = $data->id;
-                    $edit = route('admin.adminBlogCategoryShow', $id);
+                    $edit = route('admin.adminPostCategoryShow', $id);
                     $btn = "
                     <div class='dropdown action-dropdown'>
                             <button class='btn dropdown-toggle' type='button'
@@ -131,7 +131,7 @@ class BlogCategoryController extends Controller
                                     href='$edit'><i
                                         class='fas fa-edit text-primary'></i> Edit</a>
                                 <a class='dropdown-item' href='#!'
-                                    onclick=single_deleteConfirm('blog_category',[$id],'false','','')><i
+                                    onclick=single_deleteConfirm('categories',[$id],'false','','')><i
                                         class='fas fa-trash text-danger'></i>
                                     Delete</a>
                                
@@ -144,10 +144,15 @@ class BlogCategoryController extends Controller
                     $checkbox = $data->id;
                     return $checkbox;
                 })
-
+                ->editColumn('created_at', function ($data) {
+                    return showDateTime($data->created_at);
+                })
+                ->editColumn('updated_at', function ($data) {
+                    return showDateTime($data->updated_at);
+                })
                 ->rawColumns(['action', 'checkbox'])
                 ->toJson();
         }
-        return view('admin.blog-category');
+        return view('admin.post-category');
     }
 }

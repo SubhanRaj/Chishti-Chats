@@ -30,8 +30,8 @@ return new class extends Migration
             $table->timestamps();
             // deleted_at
             $table->softDeletes();
-            // url_slug
-            $table->string('url_slug', 255);
+            // slug
+            $table->string('slug', 255);
         });
     }
 

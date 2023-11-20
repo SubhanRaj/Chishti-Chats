@@ -78,7 +78,7 @@ function loginData($token)
 
 function companyEmail()
 {
-    
+
     return "adabkarionline@gmail.com";
 }
 
@@ -136,7 +136,7 @@ function verify_captcha($gcaptcha)
 {
     $secrect = '6LfoZGskAAAAAOr9QpOjc9VCtUHIFxR_uyMIZG5T';
     $ip = $_SERVER['REMOTE_ADDR'];
-    $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secrect) .  '&response=' . urlencode($gcaptcha) . '&remoteip=' . $ip;
+    $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secrect) . '&response=' . urlencode($gcaptcha) . '&remoteip=' . $ip;
 
     $api_content = file_get_contents($url);
     $api_response = json_decode($api_content);
@@ -153,7 +153,7 @@ function verify_captcha($gcaptcha)
 function getAllState()
 {
     $data = DB::table('states')->orderBy('name', 'asc')->get();
-    $states  = '';
+    $states = '';
     foreach ($data as $single_state) {
         $states .= "<option value='$single_state->id'>$single_state->name</option>";
     }
@@ -171,18 +171,18 @@ function new_fileName($file_name)
 function removeFileExtension($path, $file_name)
 {
     $get_extension = pathinfo($path, PATHINFO_EXTENSION);
-    $length =   strlen($get_extension);
+    $length = strlen($get_extension);
     if ($length == 3) {
-        $extension_from_string =  substr($file_name, -4);
+        $extension_from_string = substr($file_name, -4);
     } elseif ($length == 4) {
         $extension_from_string = substr($file_name, -5);
     }
-    return  str_replace($extension_from_string, '', $file_name);
+    return str_replace($extension_from_string, '', $file_name);
 }
 
 function IND_num_format($number)
 {
-    $decimal = (string)($number - floor($number));
+    $decimal = (string) ($number - floor($number));
     $money = floor($number);
     $length = strlen($money);
     $delimiter = '';
@@ -261,15 +261,15 @@ function sanitizeInput($input)
 
 function generateId($table, $col, $three_digit_prefix)
 {
-    $getData  = DB::table("$table")->limit(1)->orderBy('id', 'desc')->get();
+    $getData = DB::table("$table")->limit(1)->orderBy('id', 'desc')->get();
     $nextId = 0;
     if (count($getData) != 0) {
         $lastId = $getData[0]->$col;
         $lastNumber = substr($lastId, 7);
         $newNumber = (int) $lastNumber + 1;
-        $nextId = $three_digit_prefix . date('Y') .  $newNumber;
+        $nextId = $three_digit_prefix . date('Y') . $newNumber;
     } else {
-        $nextId = $three_digit_prefix . date('Y') .  '1';
+        $nextId = $three_digit_prefix . date('Y') . '1';
     }
 
     return $nextId;
@@ -287,7 +287,7 @@ function removeExtension($img_name)
     } elseif ($length == 5) {
         $extension_from_string = substr($img_name, -6);
     }
-    return  $file_name = str_replace($extension_from_string, '', $img_name);
+    return $file_name = str_replace($extension_from_string, '', $img_name);
 }
 
 
@@ -300,17 +300,15 @@ function getMediaFile($id)
         $url = $getMedia[0]->img_name;
         $alt = $getMedia[0]->alt;
         $title = $getMedia[0]->title;
-        $caption = $getMedia[0]->caption;
-        $description = $getMedia[0]->description;
+
     } else {
         $url = '';
         $alt = '';
         $title = '';
-        $caption = '';
-        $description = '';
+
     }
     $src = asset('mystorage/media') . '/' . $url;
-    return "<img decoding='async' src='$src' alt='$alt' title='$title' caption='$caption' description='$description' >";
+    return "<img decoding='async' src='$src' alt='$alt' title='$title'  >";
 }
 function getMediaUrl($id)
 {
@@ -319,22 +317,19 @@ function getMediaUrl($id)
         $url = $getMedia[0]->img_name;
         $alt = $getMedia[0]->alt;
         $title = $getMedia[0]->title;
-        $caption = $getMedia[0]->caption;
-        $description = $getMedia[0]->description;
+
     } else {
         $url = '';
         $alt = '';
         $title = '';
-        $caption = '';
-        $description = '';
+
     }
     $src = asset('mystorage/media') . '/' . $url;
-    return  [
+    return [
         'src' => $src,
         'alt' => $alt,
         'title' => $title,
-        'caption' => $caption,
-        'des' => $description,
+
     ];
 }
 
@@ -349,11 +344,11 @@ function getPortfolioCategoryName($cat_id)
 }
 
 
-function getBlogCategoryName($cat_id)
+function getPostCategoryName($cat_id)
 {
-    $data = DB::table('blog_category')->where('cat_id', '=', "$cat_id")->get();
+    $data = DB::table('categories')->where('id', '=', "$cat_id")->get();
     if (count($data) != 0) {
-        return $data[0]->cat_name;
+        return $data[0]->category_name;
     } else {
         return "Not Found";
     }
@@ -369,7 +364,7 @@ function showComments($blogId)
         ->orderBy('id', 'desc')
         ->get();
     if (count($comments) != 0) {
-        $comment_str  = "";
+        $comment_str = "";
         foreach ($comments as $single_comment) {
             $full_name = $single_comment->full_name;
             $date_time = showDateTime($single_comment->created_at);
@@ -406,12 +401,12 @@ function getNexPrevBlogUrl($id)
         ->get();
 
     if (count($next_data) > 0) {
-        $next_url = route('frontend.blogDetails',  $next_data[0]->route_name);
+        $next_url = route('frontend.blogDetails', $next_data[0]->route_name);
     } else {
         $next_url = 0;
     }
     if (count($prev_data) > 0) {
-        $prev_url = route('frontend.blogDetails',  $prev_data[0]->route_name);
+        $prev_url = route('frontend.blogDetails', $prev_data[0]->route_name);
     } else {
         $prev_url = 0;
     }
@@ -470,7 +465,7 @@ function getCartTotal($for)
             foreach ($cart as $single_cart) {
                 $cart_variant = $single_cart['variant'];
                 $cart_qty = $single_cart['quantity'];
-                $getData =  DB::table('product_variation')->where('id', '=', $cart_variant)->get();
+                $getData = DB::table('product_variation')->where('id', '=', $cart_variant)->get();
                 if (count($getData) > 0) {
                     $price = $cart_qty * $getData[0]->price;
                     $sub_total += $price;
@@ -483,7 +478,7 @@ function getCartTotal($for)
             foreach ($buynow as $single_buynow) {
                 $buynow_variant = $single_buynow['variant'];
                 $buynow_qty = $single_buynow['quantity'];
-                $getData =  DB::table('product_variation')->where('id', '=', $buynow_variant)->get();
+                $getData = DB::table('product_variation')->where('id', '=', $buynow_variant)->get();
                 if (count($getData) > 0) {
                     $price = $buynow_qty * $getData[0]->price;
                     $sub_total += $price;
@@ -532,9 +527,9 @@ function couponValidity($code)
 
     $valid_till = showDateTime($coupon_data[0]->valid_till);
     if ($formattedDateTime < $str_valid_till) {
-        return  ['status' => true, 'couponData' => $coupon_data[0]];
+        return ['status' => true, 'couponData' => $coupon_data[0]];
     } else {
-        return  ['status' => false,];
+        return ['status' => false,];
     }
 }
 
@@ -623,7 +618,7 @@ function review_calculation($pro_id)
         $three_star_per = 0;
         $two_star_per = 0;
         $one_star_per = 0;
-        $overall_rating  = 0;
+        $overall_rating = 0;
         $overall_rating_per = 0;
         $reviews = array();
 
@@ -657,7 +652,7 @@ function generateOrderId()
         if (strpos($lastId, "AB") >= 0) {
             $lastNumber = substr($lastId, 2);
             $newNumber = (int) $lastNumber + 1;
-            $nextId = 'AB' .   $newNumber;
+            $nextId = 'AB' . $newNumber;
         } else {
             $nextId = 'AB1001';
         }
@@ -667,4 +662,38 @@ function generateOrderId()
 
 
     return $nextId;
+}
+
+
+
+function getTagList(array $checkedArr)
+{
+    $tagData = DB::table('tags')->orderBy('tag', 'asc')->get();
+    $tagList = "";
+
+    if (count($tagData) != 0) {
+        foreach ($tagData as $single_tag) {
+            $tag_id = $single_tag->id;
+            $tag_name = $single_tag->tag;
+            if (in_array($tag_id, $checkedArr)) {
+                $tagList .= "
+                <label class='list-group-item'>
+                      <input class='form-check-input me-1' type='checkbox' checked  value='$tag_id' name='tags[]'>  
+                      $tag_name
+                </label>
+                ";
+            } else {
+                $tagList .= "
+            <label class='list-group-item'>
+                  <input class='form-check-input me-1' type='checkbox'  value='$tag_id' name='tags[]'>  $tag_name
+            </label>
+            ";
+            }
+        }
+    } else {
+        $tagList = '<div class="alert alert-danger border-0 bg-danger alert-dismissible fade show">
+         <div class="text-white">Data Not Found !</div>
+     </div>';
+    }
+    return $tagList;
 }

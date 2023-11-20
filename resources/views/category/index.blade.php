@@ -72,7 +72,7 @@
                                     <img src="{{asset('assets/img/home_support/rc1.png')}}" alt="community post">
                                 </div>
                                 <div class="entry-content">
-                                    <a href="{{ route('categories.show', $category->url_slug) }}">
+                                    <a href="{{ route('categories.show', $category->slug) }}">
                                         <h3 class="post-title">
                                             {{ $category->category_name }}
 

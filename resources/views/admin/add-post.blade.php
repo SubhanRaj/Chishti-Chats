@@ -1,6 +1,6 @@
 @extends('admin.main')
 @push('title')
-    <title>Add Blog</title>
+    <title>Add Post</title>
 @endpush
 
 @section('main-section')
@@ -10,14 +10,14 @@
             <div class="card p-0">
                 <div class="card-body p-0">
                     <div class="page-breadcrumb d-none d-sm-flex align-items-center border px-3 pt-2 pb-2 bg-light ">
-                        <div class="breadcrumb-title pe-3">Blog</div>
+                        <div class="breadcrumb-title pe-3">Post</div>
                         <div class="ps-3">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb mb-0 p-0">
                                     <li class="breadcrumb-item"><a href="{{ route('admin.indexView') }}"><i
                                                 class="bx bx-home-alt"></i></a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Add Blog</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Add Post</li>
                                 </ol>
                             </nav>
                         </div>
@@ -28,23 +28,23 @@
             <div class="col-12 p-0 mt-4">
                 <div class="card">
                     <div class="card-header border-bottom">
-                        <h6 class="text-primary" style="font-size: 16px">Add Blog</h6>
+                        <h6 class="text-primary" style="font-size: 16px">Add Post</h6>
                     </div>
                     <div class="card-body">
 
-                        <form method="POST" id="blog-form"
-                            onsubmit="uploadData2('blog-form','{{ route('admin.addBlogSave') }}', 'alert-box', 'btn-box-1', event)"
+                        <form method="POST" id="post-form"
+                            onsubmit="uploadData2('post-form','{{ route('admin.addPostSave') }}', 'alert-box', 'btn-box-1', event)"
                             class="mx-3 p-3" enctype="multipart/form-data">
                             @csrf
                             <div id="alert-box"></div>
                             <div class="row">
                                 <div class="col-lg-6 mb-3">
 
-                                    <label class="form-label">Category </label>
-                                    <select name="category_name" class="form-control" required>
+                                    <label class="form-label">Category <span class="text-danger"> *</span> </label>
+                                    <select name="category_id" class="form-control" required>
                                         <option value="">Select Category</option>
-                                        @foreach ($blogCategory as $singleblogCat)
-                                            <option value="{{ $singleblogCat->cat_id }}">{{ $singleblogCat->cat_name }}
+                                        @foreach ($postCategory as $single_post_cat)
+                                            <option value="{{ $single_post_cat->id }}">{{ $single_post_cat->category_name }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -52,21 +52,28 @@
 
                                 </div>
                                 <div class="col-lg-6 mb-3">
-                                    <label class="form-label"> Title</label>
+                                    <label class="form-label"> Title <span class="text-danger"> *</span></label>
                                     <input type="text" name="title" class="form-control" required
-                                        placeholder="Enter Blog Title">
+                                        placeholder="Enter Post Title">
                                     <p class="form-feedback invalid-feedback" data-name="title"></p>
                                 </div>
                                 <div class="col-lg-6 mb-3">
-                                    <label class="form-label"> Slug</label>
+                                    <label class="form-label"> Slug <span class="text-danger"> *</span></label>
                                     <input type="text" name="slug" class="form-control" required placeholder="Slug">
                                     <p class="form-feedback invalid-feedback" data-name="slug"></p>
                                 </div>
-                                <div class="col-lg-6 mb-3">
-                                    <label class="form-label"> Popular (0 for not popular and 1 for popular )</label>
-                                    <input type="number" name="popular" class="form-control" required
-                                        placeholder="Enter 0 or 1">
-                                    <p class="form-feedback invalid-feedback" data-name="popular"></p>
+                                <div class="col-12 mb-3">
+                                    <label class="form-label">Tags <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="border p-2 overflow-auto" style="max-height:300px">
+                                        <!-- Hover added -->
+                                        <div class="list-group">
+
+                                            @php
+                                                echo getTagList([]);
+                                            @endphp
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label class="form-label">Feature Image<span class="text-danger">*</span></label>
@@ -85,14 +92,15 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12 mb-3">
-                                    <label class="form-label"> Short Description ( Max: 255 )</label>
+                                    <label class="form-label"> Short Description ( Max: 255 ) <span class="text-danger">
+                                            *</span></label>
                                     <textarea name="short_description" rows="5" class="form-control" maxlength="255" placeholder="Short Description"></textarea>
                                     <p class="form-feedback invalid-feedback" data-name="short_description"></p>
                                 </div>
                                 <div class="col-lg-12 mb-3">
-                                    <label class="form-label"> Blog Content</label>
-                                    <textarea name="blog_content" id="editor" cols="30" rows="10" class="form-control"></textarea>
-                                    <p class="form-feedback invalid-feedback" data-name="blog_content"></p>
+                                    <label class="form-label"> Post Content <span class="text-danger"> *</span></label>
+                                    <textarea name="content" id="editor" cols="30" rows="10" class="form-control"></textarea>
+                                    <p class="form-feedback invalid-feedback" data-name="content"></p>
                                 </div>
                             </div>
 
@@ -104,8 +112,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 

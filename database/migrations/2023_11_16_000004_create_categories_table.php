@@ -16,8 +16,8 @@ return new class extends Migration
             $table->id();
             // categoryName, string, max 255 characters, unique
             $table->string('category_name', 255)->unique();
-            // url_slug
-            $table->string('url_slug', 255);
+            // slug
+            $table->string('slug', 255);
             // created_at, updated_at
             $table->timestamps();
             // deleted_at

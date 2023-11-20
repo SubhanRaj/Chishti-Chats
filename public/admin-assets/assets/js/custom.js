@@ -186,7 +186,11 @@ function Preloader(display) {
     }
 }
 // ===================== Preloader Show End =====================
-
+function setAlertData(alertmsg, alertbox) {
+    localStorage.setItem("alertMessage", alertmsg);
+    localStorage.setItem("alertBoxId", alertbox);
+    localStorage.setItem("alertCount", "0");
+}
 window.onload = (event) => {
     let alertMessage = localStorage.getItem("alertMessage");
     let alertBoxId = localStorage.getItem("alertBoxId");
@@ -226,34 +230,43 @@ function uploadData1(formid, route, alertBox, btnBox, event) {
         contentType: false,
         processData: false,
         success: function (response) {
-            // console.log(response);
+
+            console.log(response)
 
             $("#" + btnBox).html(btn_box_html); // reset button box html
             if (response["status"] == false) {
-                danger_noti(response["message"]);
-                let alert_msg = showAlert("danger", false, response["message"]);
-                $("#" + alertBox).html(alert_msg);
 
-                let errors_key = Object.keys(response["errors"]);
-                for (var i = 0; i < errors_key.length; i++) {
-                    let errors_msg = response["errors"][errors_key[i]];
-                    let formField = $(
-                        "#" + formid + " [name='" + errors_key[i] + "']"
-                    );
-                    formField.addClass("is-invalid");
-                    let form_feedback = $(
-                        "#" +
-                        formid +
-                        " .form-feedback[data-name='" +
-                        errors_key[i] +
-                        "']"
-                    );
-                    form_feedback.html(errors_msg[0]);
+                // throwable errors 
+                if (response['errors_type'] != '' && response['errors_type'] != undefined) {
+                    let th_error = response['errors']['errorInfo']
+                    let alert_msg = showAlert("danger", false, th_error[2]);
+                    $("#" + alertBox).html(alert_msg);
+                    danger_noti(th_error[2])
+                } else {
+                    let alert_msg = showAlert("danger", false, response["message"]);
+                    $("#" + alertBox).html(alert_msg);
+                    danger_noti(response["message"]);
+                    let errors_key = Object.keys(response["errors"]);
+                    for (var i = 0; i < errors_key.length; i++) {
+                        let errors_msg = response["errors"][errors_key[i]];
+                        let formField = $(
+                            "#" + formid + " [name='" + errors_key[i] + "']"
+                        );
+                        formField.addClass("is-invalid");
+                        let form_feedback = $(
+                            "#" +
+                            formid +
+                            " .form-feedback[data-name='" +
+                            errors_key[i] +
+                            "']"
+                        );
+                        form_feedback.html(errors_msg[0]);
+                    }
                 }
+
             } else {
-                localStorage.setItem("alertMessage", response["message"]);
-                localStorage.setItem("alertBoxId", alertBox);
-                localStorage.setItem("alertCount", "0");
+                setAlertData(response["message"], alertBox);
+
                 $("#" + formid + " [class*='is-invalid']").removeClass(
                     "is-invalid"
                 );
@@ -288,34 +301,43 @@ function uploadData2(formid, route, alertBox, btnBox, event) {
         contentType: false,
         processData: false,
         success: function (response) {
-            // console.log(response);
+
+            console.log(response)
 
             $("#" + btnBox).html(btn_box_html); // reset button box html
             if (response["status"] == false) {
-                danger_noti(response["message"]);
-                let alert_msg = showAlert("danger", false, response["message"]);
-                $("#" + alertBox).html(alert_msg);
 
-                let errors_key = Object.keys(response["errors"]);
-                for (var i = 0; i < errors_key.length; i++) {
-                    let errors_msg = response["errors"][errors_key[i]];
-                    let formField = $(
-                        "#" + formid + " [name='" + errors_key[i] + "']"
-                    );
-                    formField.addClass("is-invalid");
-                    let form_feedback = $(
-                        "#" +
-                        formid +
-                        " .form-feedback[data-name='" +
-                        errors_key[i] +
-                        "']"
-                    );
-                    form_feedback.html(errors_msg[0]);
+                // throwable errors 
+                if (response['errors_type'] != '' && response['errors_type'] != undefined) {
+                    let th_error = response['errors']['errorInfo']
+                    let alert_msg = showAlert("danger", false, th_error[2]);
+                    $("#" + alertBox).html(alert_msg);
+                    danger_noti(th_error[2])
+                } else {
+                    let alert_msg = showAlert("danger", false, response["message"]);
+                    $("#" + alertBox).html(alert_msg);
+                    danger_noti(response["message"]);
+                    let errors_key = Object.keys(response["errors"]);
+                    for (var i = 0; i < errors_key.length; i++) {
+                        let errors_msg = response["errors"][errors_key[i]];
+                        let formField = $(
+                            "#" + formid + " [name='" + errors_key[i] + "']"
+                        );
+                        formField.addClass("is-invalid");
+                        let form_feedback = $(
+                            "#" +
+                            formid +
+                            " .form-feedback[data-name='" +
+                            errors_key[i] +
+                            "']"
+                        );
+                        form_feedback.html(errors_msg[0]);
+                    }
                 }
+
             } else {
-                localStorage.setItem("alertMessage", response["message"]);
-                localStorage.setItem("alertBoxId", alertBox);
-                localStorage.setItem("alertCount", "0");
+                setAlertData(response["message"], alertBox);
+
                 $("#" + formid + " [class*='is-invalid']").removeClass(
                     "is-invalid"
                 );

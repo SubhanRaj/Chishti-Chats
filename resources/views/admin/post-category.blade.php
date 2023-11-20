@@ -38,7 +38,7 @@
                                     <div class="col-12 mb-3">
 
                                         <form method="POST" id="blog-cat-form"
-                                            onsubmit="uploadData1('blog-cat-form', '{{ route('admin.adminBlogCategorySave') }}', 'alert-box', 'btn-box-1', event)"
+                                            onsubmit="uploadData1('blog-cat-form', '{{ route('admin.adminPostCategorySave') }}', 'alert-box', 'btn-box-1', event)"
                                             class="shadow mx-3 p-3">
                                             @csrf
                                             <div id="alert-box"></div>
@@ -88,11 +88,11 @@
                                             </div>
 
                                             <div class="btn-group" role="group" aria-label="Basic example">
-                                                
+
                                                 <button type="button" class="btn btn-danger disabled-btn"
                                                     data-bs-toggle="tooltip" data-bs-placement="auto" data-bs-title="Delete"
                                                     disabled
-                                                    onclick="deleteConfirm('category-delete-all','blog_category', 'false','','')"><i
+                                                    onclick="deleteConfirm('category-delete-all','categories', 'false','','')"><i
                                                         class="fa-regular fa-trash"></i>
                                                     <input type="hidden" value="" id="category-delete-all">
                                                 </button>
@@ -110,7 +110,6 @@
                                         <thead class="bg-light border-0">
                                             <tr>
                                                 <th></th>
-                                                <th class="text-center text-nowrap">Category Id</th>
                                                 <th class="text-center text-nowrap">Category Name</th>
                                                 <th class="text-center text-nowrap">Category Slug</th>
                                                 <th class="text-center text-nowrap">Created At</th>
@@ -136,12 +135,12 @@
 
     @push('scripts')
         <script>
-            let blog_category = ['cat_id', 'cat_name', 'slug'];
+            let categories = ['category_name', 'slug'];
             initServerSideDataTable(
                 "category-table",
-                "/admin/show-blog-category",
+                "/admin/show-post-category",
                 "category-selected",
-                createColumn(blog_category),
+                createColumn(categories),
                 "category-table-action"
             );
         </script>

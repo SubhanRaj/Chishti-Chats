@@ -75,11 +75,11 @@
                     <div class="row gy-4 justify-content-center">
                         @foreach ( $categories as $category )
                         <div class="col-md-6 col-lg-4">
-                            <a href="{{route('categories.show', $category->url_slug)}}">
+                            <a href="{{route('categories.show', $category->slug)}}">
                                 <div class="community-topic-widget-box wow fadeInUp">
                                     <img src="{{asset('assets/img/home_two/lightbulb.svg')}}" alt="icon">
                                     <div class="box-content">
-                                        <a href="{{route('categories.show', $category->url_slug)}}">
+                                        <a href="{{route('categories.show', $category->slug)}}">
                                             <h5>
                                                 {{$category->category_name}}
                                             </h5>
@@ -108,7 +108,7 @@
                         <div class="post-content">
                             <div class="post-title">
                                 <h6>
-                                    <a href="{{route('posts.show', $post->url_slug)}}">
+                                    <a href="{{route('posts.show', $post->slug)}}">
                                         {{$post->title}}
                                     </a>
                                     <span><i class="icon_check_alt2"></i></span>

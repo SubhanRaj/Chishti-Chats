@@ -21,7 +21,6 @@ class IndexController extends Controller
         $total_categories = Category::count();
         
         return view('pages.index', compact('posts', 'total_posts', 'categories', 'total_categories'));
-        
     }
 
     // show login page

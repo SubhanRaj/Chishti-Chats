@@ -37,10 +37,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($url_slug)
+    public function show($slug)
     {
-        // get the category by matching the url_slug
-        $category = Category::where('url_slug', $url_slug)->firstOrFail();
+        // get the category by matching the slug
+        $category = Category::where('slug', $slug)->firstOrFail();
         // return view with category
         return view('category.show', compact('category'));
     }

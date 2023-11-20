@@ -152,7 +152,7 @@
                                             </div>
                                             <div class="media-body">
                                                 <div class="t_title">
-                                                    <a href="{{route('posts.show', $post->url_slug)}}">
+                                                    <a href="{{route('posts.show', $post->slug)}}">
                                                         <h4>
                                                             {{$post->title}}
                                                         </h4>
