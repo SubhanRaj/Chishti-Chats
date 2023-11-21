@@ -344,6 +344,7 @@ function getPortfolioCategoryName($cat_id)
 }
 
 
+
 function getPostCategoryName($cat_id)
 {
     $data = DB::table('categories')->where('id', '=', "$cat_id")->get();
@@ -414,125 +415,6 @@ function getNexPrevBlogUrl($id)
     return ['next' => $next_url, 'prev' => $prev_url];
 }
 
-function getCategoryOption($table, $col, $to_be_value)
-{
-    $data = DB::table($table)->get();
-    $str = '';
-    foreach ($data as $singleData) {
-        $value = $singleData->$to_be_value;
-        $show_value = $singleData->$col;
-        $str .= "<option value='$value'>$show_value</option>";
-    }
-    return $str;
-}
-
-function getProductVariation($product_id)
-{
-    $price = DB::table('product_variation')->where('product_id', '=', $product_id)->orderBy('id', 'asc')->get();
-    return $price;
-}
-
-function getProductSize($product_id)
-{
-    $size = DB::table('product_variation')->select('size')->distinct()->where('product_id', '=', $product_id)->orderBy('id', 'asc')->get();
-    $option = '';
-    if (count($size) > 0) {
-        foreach ($size as $single_size) {
-            $option .= "<option value='$single_size->size'>$single_size->size</option>";
-        }
-    }
-    return $option;
-}
-
-
-function getProductUsingProductId($pro_id)
-{
-    $data = DB::table('products')->where('product_id', '=', $pro_id)->get();
-    return $data;
-}
-
-
-function getCartTotal($for)
-{
-    $sub_total = 0;
-    $grandTotal = 0;
-    $coupon_discount = 0;
-    $coupon_msg = '';
-
-    if ($for == 'addtocart') {
-        if (session()->has('cart')) {
-            $cart = session()->get('cart');
-            foreach ($cart as $single_cart) {
-                $cart_variant = $single_cart['variant'];
-                $cart_qty = $single_cart['quantity'];
-                $getData = DB::table('product_variation')->where('id', '=', $cart_variant)->get();
-                if (count($getData) > 0) {
-                    $price = $cart_qty * $getData[0]->price;
-                    $sub_total += $price;
-                }
-            }
-        }
-    } elseif ($for == 'buynow') {
-        if (session()->has('buynow')) {
-            $buynow = session()->get('buynow');
-            foreach ($buynow as $single_buynow) {
-                $buynow_variant = $single_buynow['variant'];
-                $buynow_qty = $single_buynow['quantity'];
-                $getData = DB::table('product_variation')->where('id', '=', $buynow_variant)->get();
-                if (count($getData) > 0) {
-                    $price = $buynow_qty * $getData[0]->price;
-                    $sub_total += $price;
-                }
-            }
-        }
-    }
-
-
-
-    // coupon code amount 
-    // if (session()->has('coupon')) {
-    //     $coupon_code = session()->get('coupon');
-    //     $couponValidity = couponValidity($coupon_code);
-    //     if ($couponValidity['status'] === true) {
-    //         $couponData = $couponValidity['couponData'];
-    //         $min_amount = $couponData->min_amount;
-
-    //         if ($sub_total >= $min_amount) {
-    //             $discount = $couponData->discount;
-    //             $calculateDiscount = ($sub_total * $discount) / 100;
-    //             $coupon_discount = $calculateDiscount;
-    //         } else {
-    //             $coupon_msg = "Coupon code valid on shopping upto Rs. $min_amount";
-    //         }
-    //     }
-    // }
-
-    // grand total 
-
-    $grandTotal = $sub_total - $coupon_discount;
-    // return ['subTotal' => $sub_total, 'grandTotal' => $grandTotal, 'couponDiscount' => $coupon_discount, 'couponMsg' => $coupon_msg];
-    return ['subTotal' => $sub_total, 'grandTotal' => $grandTotal];
-}
-
-
-function couponValidity($code)
-{
-    $coupon_data = DB::table('coupons')->where('code', '=', $code)->get();
-
-    $str_valid_till = strtotime($coupon_data[0]->valid_till);
-    // Create a new instance of Carbon with the current date and time
-    $dateTime = Carbon::now();
-    // Format the date and time to match Laravel's created_at format
-    $formattedDateTime = strtotime($dateTime->toDateTimeString());
-
-    $valid_till = showDateTime($coupon_data[0]->valid_till);
-    if ($formattedDateTime < $str_valid_till) {
-        return ['status' => true, 'couponData' => $coupon_data[0]];
-    } else {
-        return ['status' => false,];
-    }
-}
-
 
 function checkUserLogin()
 {
@@ -566,106 +448,6 @@ function stringCutter($string, $start, $end, $addString)
 }
 
 
-function review_calculation($pro_id)
-{
-    $count_review = DB::table('product_review')->where([['product_id', '=', $pro_id], ['status', '=', 1]])->count();
-    if ($count_review > 0) {
-
-        $total_review = DB::table('product_review')->where('product_id', '=', $pro_id)->count();
-        $five_star = DB::table('product_review')->where([['product_id', '=', $pro_id], ['star', '=', 5], ['status', '=', 1]])->count();
-        $four_star = DB::table('product_review')->where([['product_id', '=', $pro_id], ['star', '=', 4], ['status', '=', 1]])->count();
-        $three_star = DB::table('product_review')->where([['product_id', '=', $pro_id], ['star', '=', 3], ['status', '=', 1]])->count();
-        $two_star = DB::table('product_review')->where([['product_id', '=', $pro_id], ['star', '=', 2], ['status', '=', 1]])->count();
-        $one_star = DB::table('product_review')->where([['product_id', '=', $pro_id], ['star', '=', 1], ['status', '=', 1]])->count();
-
-        $five_star_per = round((($five_star * 100) / $total_review), 2);
-        $four_star_per = round((($four_star * 100) / $total_review), 2);
-        $three_star_per = round((($three_star * 100) / $total_review), 2);
-        $two_star_per = round((($two_star * 100) / $total_review), 2);
-        $one_star_per = round((($one_star * 100) / $total_review), 2);
-
-
-        $overall_rating = round((((1 * $one_star) + (2 * $two_star) + (3 * $three_star) + (4 * $four_star) + (5 * $five_star)) / $total_review), 1);
-
-        $overall_rating_per = round((($overall_rating * 100) / 5), 1);
-
-        $reviews = array();
-
-        $reviews['total_review'] = $total_review;
-        $reviews['five_star'] = $five_star;
-        $reviews['four_star'] = $four_star;
-        $reviews['three_star'] = $three_star;
-        $reviews['two_star'] = $two_star;
-        $reviews['one_star'] = $one_star;
-        $reviews['five_star_per'] = $five_star_per;
-        $reviews['four_star_per'] = $four_star_per;
-        $reviews['three_star_per'] = $three_star_per;
-        $reviews['two_star_per'] = $two_star_per;
-        $reviews['one_star_per'] = $one_star_per;
-        $reviews['overall_rating'] = $overall_rating;
-        $reviews['overall_rating_per'] = $overall_rating_per;
-
-        return $reviews;
-    } else {
-        $total_review = 0;
-        $five_star = 0;
-        $four_star = 0;
-        $three_star = 0;
-        $two_star = 0;
-        $one_star = 0;
-        $five_star_per = 0;
-        $four_star_per = 0;
-        $three_star_per = 0;
-        $two_star_per = 0;
-        $one_star_per = 0;
-        $overall_rating = 0;
-        $overall_rating_per = 0;
-        $reviews = array();
-
-        $reviews['total_review'] = $total_review;
-        $reviews['five_star'] = $five_star;
-        $reviews['four_star'] = $four_star;
-        $reviews['three_star'] = $three_star;
-        $reviews['two_star'] = $two_star;
-        $reviews['one_star'] = $one_star;
-        $reviews['five_star_per'] = $five_star_per;
-        $reviews['four_star_per'] = $four_star_per;
-        $reviews['three_star_per'] = $three_star_per;
-        $reviews['two_star_per'] = $two_star_per;
-        $reviews['one_star_per'] = $one_star_per;
-        $reviews['overall_rating'] = $overall_rating;
-        $reviews['overall_rating_per'] = $overall_rating_per;
-        return $reviews;
-    }
-}
-
-
-
-function generateOrderId()
-{
-    $getData = DB::table('orders')->orderBy('id', 'desc')->limit(1)->get();
-    $nextId = 0;
-
-    if (count($getData) != 0) {
-        $lastId = $getData[0]->order_id;
-
-        if (strpos($lastId, "AB") >= 0) {
-            $lastNumber = substr($lastId, 2);
-            $newNumber = (int) $lastNumber + 1;
-            $nextId = 'AB' . $newNumber;
-        } else {
-            $nextId = 'AB1001';
-        }
-    } else {
-        $nextId = 'AB1001';
-    }
-
-
-    return $nextId;
-}
-
-
-
 function getTagList(array $checkedArr)
 {
     $tagData = DB::table('tags')->orderBy('tag', 'asc')->get();
@@ -696,4 +478,26 @@ function getTagList(array $checkedArr)
      </div>';
     }
     return $tagList;
+}
+
+
+function userData($user_id)
+{
+    $data = DB::table('users')->where('user_id', '=', $user_id)->first();
+    if (!is_null($data)) {
+        return $data;
+    } else {
+        return false;
+    }
+}
+
+function firstLetter($user_id)
+{
+    $data = userData($user_id);
+    if ($data) {
+        $name = $data->name;
+        return substr($name, 0, 1);
+    } else {
+        return false;
+    }
 }

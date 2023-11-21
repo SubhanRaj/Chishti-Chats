@@ -526,63 +526,7 @@
         createCookie(name, "", -1);
     }
 
-    var prefersDark =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-    var selectedNightTheme = readCookie("body_dark");
-
-    if (
-        selectedNightTheme == "true" ||
-        (selectedNightTheme === null && prefersDark)
-    ) {
-        applyNight();
-        $(".dark_mode_switcher").prop("checked", true);
-    } else {
-        applyDay();
-        $(".dark_mode_switcher").prop("checked", false);
-    }
-
-    function applyNight() {
-        if ($(".js-darkmode-btn .ball").length) {
-            $(".js-darkmode-btn .ball").css("left", "26px");
-        }
-        $("body").addClass("body_dark");
-    }
-
-    function applyDay() {
-        if ($(".js-darkmode-btn .ball").length) {
-            $(".js-darkmode-btn .ball").css("left", "3px");
-        }
-        $("body").removeClass("body_dark");
-    }
-
-    $(".dark_mode_switcher").on("change", function () {
-        if ($(this).is(":checked")) {
-            applyNight();
-            createCookie("body_dark", true, 999);
-        } else {
-            applyDay();
-            createCookie("body_dark", false, 999);
-        }
-    });
-
-    const darkModeMediaQuery = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-    );
-
-    function toggleTheme(e) {
-        if (e.matches) {
-            applyNight();
-            createCookie("body_dark", true, 999);
-        } else {
-            applyDay();
-            createCookie("body_dark", false, 999);
-        }
-    }
-
-    darkModeMediaQuery.addListener(toggleTheme);
-    toggleTheme(darkModeMediaQuery);
-
+   
     $(".mobile_menu_btn").on("click", function () {
         $(".side_menu").addClass("menu-opened");
         $("body").removeClass("menu-is-closed").addClass("menu-is-opened");

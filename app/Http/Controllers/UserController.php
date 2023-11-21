@@ -97,21 +97,21 @@ class UserController extends Controller
                 if ($checkToken[0]->save()) {
                     $response_arr['status'] = true;
                     $response_arr['message'] = "Verification Successfull";
-                    return  view('frontend.email-verification')->with(compact('response_arr'));
+                    return  view('pages.email-verification')->with(compact('response_arr'));
                 } else {
                     $response_arr['status'] = false;
                     $response_arr['message'] = "Verification Failed";
-                    return  view('frontend.email-verification')->with(compact('response_arr'));
+                    return  view('pages.email-verification')->with(compact('response_arr'));
                 }
             } else {
                 $response_arr['status'] = true;
                 $response_arr['message'] = "Already Verified";
-                return  view('frontend.email-verification')->with(compact('response_arr'));
+                return  view('pages.email-verification')->with(compact('response_arr'));
             }
         } else {
             $response_arr['status'] = false;
             $response_arr['message'] = "Invalid verification token";
-            return  view('frontend.email-verification')->with(compact('response_arr'));
+            return  view('pages.email-verification')->with(compact('response_arr'));
         }
     }
     public function login(Request $request)
@@ -203,16 +203,7 @@ class UserController extends Controller
             }
         }
     }
-    public function googleLoginRedirect()
-    {
-    }
-    public function googleCallback()
-    {
-    }
-    public function userAccount()
-    {
-    }
-
+   
     function sendReEmailVerificationLink(Request $request)
     {
         $validator = Validator::make($request->all(), [

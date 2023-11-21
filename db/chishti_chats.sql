@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2023 at 07:27 PM
+-- Generation Time: Nov 21, 2023 at 08:18 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -59,14 +59,20 @@ INSERT INTO `categories` (`id`, `category_name`, `slug`, `created_at`, `updated_
 
 CREATE TABLE `comments` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `post_id` int(11) NOT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `filepath` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `post_id`, `comment`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '04DE64DB56111381', 18, 'sdfds', '2023-11-21 13:37:11', '2023-11-21 13:37:11', NULL);
 
 -- --------------------------------------------------------
 
@@ -226,12 +232,12 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL,
   `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '[{"file_id":"419"}]',
   `tags` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `short_des` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -255,7 +261,8 @@ INSERT INTO `posts` (`id`, `user_id`, `category_id`, `title`, `slug`, `content`,
 (9, '8', 9, 'Voluptatem eum in quae.', 'et-laboriosam-veniam-dolores-ipsum', 'Corporis eligendi aut vel iste. Rerum cupiditate dolor veritatis sed voluptatem. Libero assumenda et quia ipsam dolorum cumque. Et numquam sit ad et.', '[{\"file_id\":\"419\"}]', 'veritatis assumenda sint', NULL, '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
 (10, '4', 6, 'Vitae ex est eius.', 'modi-dolorem-dicta-voluptatem-quis', '&lt;p&gt;Et voluptate deleniti aut ducimus autem maxime perspiciatis est. Ut iure ut voluptatem et aut magni ad. Vel veniam et voluptas similique voluptatem.&lt;/p&gt;', '[{\"file_id\":\"419\"}]', 'adipisci recusandae ab', 'tst', '2023-11-20 09:05:51', '2023-11-20 10:29:56', NULL),
 (11, 'Admin', 6, 'testing', 'testsdfsd', '&lt;p&gt;test&lt;/p&gt;', '[{\"file_id\":\"419\"}]', NULL, 'test', '2023-11-20 10:12:42', '2023-11-20 12:35:18', NULL),
-(12, 'Admin', 4, 'sdtsdf', 'sdfsdf', '&lt;p&gt;sdf&lt;/p&gt;', '[{\"file_id\":\"419\"}]', NULL, 'sdf', '2023-11-20 12:52:39', '2023-11-20 12:52:39', NULL);
+(12, 'Admin', 4, 'sdtsdf', 'sdfsdf', '&lt;p&gt;sdf&lt;/p&gt;', '[{\"file_id\":\"419\"}]', NULL, 'sdf', '2023-11-20 12:52:39', '2023-11-20 12:52:39', NULL),
+(18, '04DE64DB56111381', 8, 'Lorem ipsum dolor sit ametsddfsd', 'lorem-ipsum-dolor-sit-ametsddfsd', '&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium necessitatibus ut aut dolores possimus impedit adipisci ea explicabo molestias vero ullam, fuga, odit rem, aliquam quibusdam illo? Non dolores eligendi eos sed dolorem impedit qui assumenda porro at sapiente facilis nisi cupiditate, soluta reiciendis sit ullam praesentium. Voluptatem temporibus asperiores atque nostrum, optio quis, distinctio obcaecati maiores maxime vitae unde? Accusamus fuga ad amet ullam dolorem doloribus non in repellat officia aliquam accusantium quia quasi a totam culpa ab, iure vitae corrupti obcaecati nemo odio numquam id repellendus? Reiciendis veniam enim illo dolorum officia neque a repellendus commodi aut, quibusdam assumenda, obcaecati dignissimos veritatis repudiandae et excepturi aperiam fuga itaque. Iste architecto eveniet, harum id ratione velit excepturi necessitatibus minima unde, pariatur qui nostrum optio maiores nemo dignissimos amet earum eum impedit perferendis fugit facilis laboriosam, vitae debitis? Doloremque, explicabo. Vero perspiciatis fuga cumque odio. Ratione doloribus sequi, voluptatibus excepturi distinctio nam porro accusamus consequatur officiis eos eveniet! Asperiores, perferendis. Ratione doloribus nihil quibusdam soluta recusandae? Ratione velit facere fugit quaerat quis laudantium quia excepturi quos voluptatum, nemo voluptatibus quisquam ipsam, dolor, ab nostrum ipsum nisi a aut recusandae temporibus quam enim! Optio ipsum ipsa totam mollitia perferendis molestias ab.&lt;/p&gt;', '[{\"file_id\":\"419\"}]', NULL, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta in ducimus quasi, eius architecto blanditiis dolorem sit consequuntur recusandae perferendis!', '2023-11-21 12:29:41', '2023-11-21 12:45:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -321,34 +328,26 @@ INSERT INTO `tags` (`id`, `tag`, `slug`, `created_at`, `updated_at`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `profile_picture` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `about` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `social_links` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `role` varchar(20) NOT NULL DEFAULT 'user',
+  `user_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` text DEFAULT NULL,
+  `avtar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `token` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `remember_token`, `profile_picture`, `about`, `social_links`, `email_verified_at`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Bo Ondricka', 'jordon19@example.net', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'oxbdsCrtuo', 'https://via.placeholder.com/640x480.png/0077bb?text=et', 'Ipsum laudantium est similique adipisci incidunt. Occaecati et voluptatum doloribus aut et vel deserunt. Blanditiis rerum magnam natus dolore aliquam.', 'http://grady.biz/rerum-doloremque-sunt-quis-dignissimos-est-temporibus.html', '2023-11-20 09:05:50', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(2, 'Lydia Ruecker MD', 'fmclaughlin@example.org', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', '9LmLLacehx', 'https://via.placeholder.com/640x480.png/008877?text=voluptas', 'Eum aliquid provident assumenda est inventore quia sequi quo. Ea aspernatur iure rerum fugiat perferendis. Vel aliquam et molestiae est eos omnis quam.', 'http://parker.com/', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(3, 'Lessie Hessel', 'mmedhurst@example.org', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'MKBIBuSzRR', 'https://via.placeholder.com/640x480.png/006666?text=repellendus', 'Numquam nesciunt ut et commodi enim. Sit ad nobis voluptates nihil ut animi ut doloribus. Ut ullam deleniti quibusdam doloremque quibusdam rerum et.', 'http://www.bayer.com/aut-perferendis-odit-maiores-voluptatem-rerum-rem', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(4, 'Russ Skiles', 'alindgren@example.net', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'AKXhBXCr7a', 'https://via.placeholder.com/640x480.png/007755?text=ipsam', 'Ratione quis nemo tenetur molestias. Omnis aut explicabo quia aut alias id voluptate saepe. Sed temporibus corporis suscipit sit facere. Totam quasi qui fugit.', 'http://www.bailey.info/aut-delectus-omnis-non-pariatur-vel-ut.html', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(5, 'Nona Bechtelar', 'fkihn@example.net', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'Afg0IXuPSz', 'https://via.placeholder.com/640x480.png/006677?text=saepe', 'Nobis ut voluptatem autem. At ad consectetur libero minus ipsa. Est quibusdam aut et repellendus sapiente id officia id. Dolores placeat id officiis debitis nulla sed accusantium.', 'http://kohler.info/amet-tempore-modi-aut-suscipit-nostrum-voluptatem-sunt', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(6, 'Prof. Amari Cremin', 'pinkie.langworth@example.org', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'RWBCDWxNJX', 'https://via.placeholder.com/640x480.png/00bb99?text=voluptatem', 'Sit dolorem inventore iusto quis. Saepe quis atque nemo consequatur quia. Magnam et ad autem magnam exercitationem.', 'http://www.kovacek.net/dolores-et-aperiam-alias-recusandae-doloremque-tenetur-optio-laborum', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(7, 'Prof. Ramon Dach DDS', 'germaine.kutch@example.com', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'CDkp5wF8Tx', 'https://via.placeholder.com/640x480.png/001177?text=provident', 'Illo vel et unde quaerat deserunt. Cupiditate repellendus vel accusamus dignissimos. Adipisci dolor cum dolores nemo earum.', 'http://www.ullrich.com/et-assumenda-temporibus-eius-voluptates-explicabo-sint', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(8, 'Aimee Cummings', 'juliana.heaney@example.org', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', '1Dm3KboRJH', 'https://via.placeholder.com/640x480.png/00aadd?text=iusto', 'Cumque non earum rerum necessitatibus consequatur nisi dicta. Ab eos numquam quo praesentium unde voluptatibus aut. Sit in hic et dolores sed.', 'http://www.baumbach.com/accusantium-non-voluptatem-quia-quas', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(9, 'Johanna Hoeger', 'laurence90@example.net', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'uXM6aVcV9P', 'https://via.placeholder.com/640x480.png/0088ff?text=et', 'Aut delectus distinctio deleniti. Sed dolorem vel aut deleniti consequuntur consequatur ipsa. Dolor eveniet laboriosam voluptas vel et beatae blanditiis. Ea architecto porro molestiae est fugit provident praesentium.', 'http://www.witting.com/', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL),
-(10, 'Mrs. Marcelina Hudson DVM', 'predovic.vickie@example.com', '$2y$12$51ICT.yL92.3z3HQ2Ko7iO5upeq1JK/ACBCZats6jt9XuxTvSjlW6', 'vKXOJZXqN5', 'https://via.placeholder.com/640x480.png/000077?text=veniam', 'Non ut officiis quis saepe eos iusto enim. Id qui et sint quae adipisci beatae. Unde reprehenderit qui quidem beatae corrupti nobis nihil. Est et consequuntur veniam. Fugit qui quia nisi laudantium quaerat qui.', 'http://www.carroll.net/sint-nobis-aliquam-eaque-voluptatem-quo', '2023-11-20 09:05:51', '2023-11-20 09:05:51', '2023-11-20 09:05:51', NULL);
+INSERT INTO `users` (`id`, `role`, `user_id`, `name`, `email`, `phone`, `address`, `avtar`, `password`, `token`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'user', '04DE64DB56111381', 'Vaibhav Goswami', 'goswamivaibhav72@gmail.com', '07518445857', 'Singh Vila, Ali Nagar sunehra, near new deep tant house, Lucknow', NULL, '$2y$12$VkN7sjEpFktdUhOi53Y6BuWV5VjZVFh0rRpxHjaR.imEq6itTNA02', 'tZgtDSV8j9VwxfJAHuZ0pSGTUaVmIQEo', '1', '2023-11-21 10:03:47', '2023-11-21 11:31:18');
 
 --
 -- Indexes for dumped tables
@@ -440,8 +439,7 @@ ALTER TABLE `tags`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_username_unique` (`username`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -457,7 +455,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -499,7 +497,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `post_tags`
@@ -517,7 +515,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

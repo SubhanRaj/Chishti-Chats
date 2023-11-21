@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Login;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
@@ -87,9 +88,7 @@ Route::controller(AjaxRequestController::class)->name('frontend.')->group(functi
 });
 
 
-Route::controller(BlogCommentController::class)->name('frontend.')->group(function () {
-    Route::post('/save-comment', 'addComment')->name('addComment');
-});
+ 
 
 // User Login Started
 Route::controller(UserController::class)->name('frontend.')->group(function () {
@@ -128,8 +127,18 @@ Route::middleware('UserLogin')->group(function () {
     Route::controller(UserAccountController::class)->name('user_account.')->group(function () {
         Route::get('/account', 'userAccount')->name('userAccount');
         Route::get('/logout', 'logout')->name('logout');
-        Route::post('/edit-account/{id}', 'editAccount')->name('editAccount');
+        Route::post('/edit-account', 'editAccount')->name('editAccount');
+        Route::post('/create-post/{user_id}', 'createPost')->name('createPost');
+        Route::post('/delete-post/{post_id}', 'deletePost')->name('deletePost');
+        Route::get('/edit-post/{user_id}/{post_id}', 'editPost')->name('editPost');
+        Route::post('/update-post/{user_id}/{post_id}', 'updatePost')->name('updatePost');
     });
+    Route::controller(CommentController::class)->name('comment.')->group(function () {
+        Route::post('/save-comment/{user_id}/{post_id}', 'saveComment')->name('saveComment');
+        
+    });
+
+
 });
 
 

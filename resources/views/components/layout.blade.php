@@ -11,8 +11,8 @@
             <div class="round_spinner">
                 <div class="spinner"></div>
                 <div class="text">
-                    <img src="{{asset('assets/img/logo/logo.png')}}" height="125px" alt="">
-                    <h4><span>{{config('app.name')}}</span></h4>
+                    <img src="{{ asset('assets/img/logo/logo.png') }}" height="125px" alt="">
+                    <h4><span>{{ config('app.name') }}</span></h4>
                 </div>
             </div>
             <h2 class="head">Where Ideas Unite</h2>
@@ -34,6 +34,10 @@
     <!-- Back to top button -->
     <a id="back-to-top" title="Back to Top"></a>
     <!-- scripts -->
+
+
+    @include('components.auth-modal')
+
     @include('include.scripts')
 </body>
 
