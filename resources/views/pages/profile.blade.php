@@ -24,13 +24,11 @@
                 <div class="col-lg-8 d-sm-flex flex-lg-row flex-column align-items-center text-center text-sm-start">
                     <img class="rounded-circle" src="{{asset('assets/img/user_details/user-img.png')}}" alt="">
                     <div class="user-info ml-lg-60 ms-sm-5 mt-4 mt-lg-0">
-                        <h3>Gustavo Dorwart</h3>
+                        <h3>Chishti Chats</h3>
                         <ul class="list-unstyled mb-4">
                             <li>Web Developer</li>
-                            <li>Boston, MA, United States</li>
+                            <li>Lucknow, UP, India</li>
                         </ul>
-                        <a class="btn follow_btn" href="#">99 Followers</a>
-                        <a class="btn follow_btn" href="#">20 Following</a>
                     </div>
                 </div>
                 <div class="col-lg-4 text-lg-end text-center">
@@ -77,7 +75,7 @@
                             <div class="filter-tab flex-wrap">
                                 <ul class="flex-wrap mb-0">
                                     <li><a class="active" href="javascript:void(0)">About</a></li>
-                                    <li><a href="javascript:void(0)">Polls</a></li>
+                                    <!-- <li><a href="javascript:void(0)">Polls</a></li>
                                     <li><a href="javascript:void(0)">Questions</a></li>
                                     <li><a href="javascript:void(0)">Answers</a></li>
                                     <li><a href="javascript:void(0)">Best Answers</a></li>
@@ -89,7 +87,7 @@
                                             <option value="More">More</option>
                                         </select>
 
-                                    </li>
+                                    </li> -->
 
                                 </ul>
                             </div>
@@ -104,35 +102,35 @@
 
                             <h4>Basic Information</h4>
                             <div class="row mt-3">
-                                <div class="col-md-4">
+                                <!-- <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/calendar.png')}}" alt=""> Age</h6>
                                     <p>25 Years</p>
-                                </div>
-                                <div class="col-md-4">
+                                </div> -->
+                                <!-- <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/badge.png')}}" alt=""> Experience</h6>
                                     <p>5 Years</p>
-                                </div>
-                                <div class="col-md-4">
+                                </div> -->
+                                <!-- <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/phone.png')}}" alt=""> Phone</h6>
                                     <p> <a href="tel:12345679">+1 (202) 456 789</a> </p>
-                                </div>
+                                </div> -->
                                 <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/location.png')}}" alt=""> Location</h6>
-                                    <p>Boston, MA, United States</p>
+                                    <p>Lucknow, UP, India</p>
                                 </div>
                                 <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/envelope.png')}}" alt=""> Email</h6>
-                                    <p><a href="mailto:gustavo@ama.com">gustavo@ama.com</a></p>
+                                    <p><a href="mailto:someone@example.com">someone@example.com</a></p>
                                 </div>
                                 <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/link.png')}}" alt=""> Visit site</h6>
-                                    <p> <a href="https://www.ama.com/">www.ama.com</a></p>
+                                    <p> <a href="https://www.kmclu.ac.in/">www.kmclu.ac.in</a> </p>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-30 gy-4 gy-xl-0">
+                    <!-- <div class="row mt-30 gy-4 gy-xl-0">
                         <div class="col-xl-3 col-md-6">
                             <div class="qna-statistics">
                                 <div>
@@ -177,7 +175,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
