@@ -181,7 +181,7 @@
                     <div class="right_side_forum">
                         <aside class="r_widget qustion_wd">
                             <button class="btn" type="button"
-                                onclick="window.location.href='{{ route('posts.create') }}'">
+                                onclick="window.location.href='{{ route('profile') }}'">
                                 <img src="{{ asset('assets/img/forum/helpful-user/question-1.png') }}"
                                     alt="">Ask Question <i class="arrow_carrot-right"></i>
                             </button>
