@@ -36,7 +36,6 @@
                         @endif
                     </span>
                     <div class="user-info ml-lg-60 ms-sm-5 mt-4 mt-lg-0">
-<<<<<<< HEAD
                         <h3>Chishti Chats</h3>
                         <ul class="list-unstyled mb-4">
                             <li>Web Developer</li>
@@ -50,24 +49,6 @@
                         <a class="wow fadeInUp" data-wow-delay="0.3s" href="#"><i class="social_linkedin"></i></a>
                         <a class="wow fadeInUp" data-wow-delay="0.5s" href="#"><i class="social_instagram"></i></a>
                         <a class="wow fadeInUp" data-wow-delay="0.7s" href="#"><i class="social_twitter"></i></a>
-=======
-                        <h3 class="mb-2">
-                            @if ($user_id != false)
-                                @php
-                                    $user_data = userData($user_id);
-                                @endphp
-                                {{ $user_data->name }}
-                            @endif
-                        </h3>
-
-                        <a class="btn follow_btn" href="#">
-                            @php
-                                echo DB::table('posts')
-                                    ->where('user_id', '=', $user_id)
-                                    ->count();
-                            @endphp
-                            Posts</a>
->>>>>>> 94ad20ce68054f9d3915b5b5f5bc350c9a6d473b
                     </div>
                 </div>
 
@@ -133,7 +114,6 @@
 
                             <h4>Basic Information</h4>
                             <div class="row mt-3">
-<<<<<<< HEAD
                                 <!-- <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/calendar.png')}}" alt=""> Age</h6>
                                     <p>25 Years</p>
@@ -144,25 +124,9 @@
                                 </div> -->
                                 <!-- <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/phone.png')}}" alt=""> Phone</h6>
-=======
-                                <div class="col-md-4">
-                                    <h6><img src="{{ asset('assets/img/user_details/calendar.png') }}" alt="">
-                                        Age</h6>
-                                    <p>25 Years</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h6><img src="{{ asset('assets/img/user_details/badge.png') }}" alt="">
-                                        Experience</h6>
-                                    <p>5 Years</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h6><img src="{{ asset('assets/img/user_details/phone.png') }}" alt="">
-                                        Phone</h6>
->>>>>>> 94ad20ce68054f9d3915b5b5f5bc350c9a6d473b
                                     <p> <a href="tel:12345679">+1 (202) 456 789</a> </p>
                                 </div> -->
                                 <div class="col-md-4">
-<<<<<<< HEAD
                                     <h6><img src="{{asset('assets/img/user_details/location.png')}}" alt=""> Location</h6>
                                     <p>Lucknow, UP, India</p>
                                 </div>
@@ -173,21 +137,6 @@
                                 <div class="col-md-4">
                                     <h6><img src="{{asset('assets/img/user_details/link.png')}}" alt=""> Visit site</h6>
                                     <p> <a href="https://www.kmclu.ac.in/">www.kmclu.ac.in</a> </p>
-=======
-                                    <h6><img src="{{ asset('assets/img/user_details/location.png') }}" alt="">
-                                        Location</h6>
-                                    <p>Boston, MA, United States</p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h6><img src="{{ asset('assets/img/user_details/envelope.png') }}" alt="">
-                                        Email</h6>
-                                    <p><a href="mailto:gustavo@ama.com">gustavo@ama.com</a></p>
-                                </div>
-                                <div class="col-md-4">
-                                    <h6><img src="{{ asset('assets/img/user_details/link.png') }}" alt="">
-                                        Visit site</h6>
-                                    <p> <a href="https://www.ama.com/">www.ama.com</a></p>
->>>>>>> 94ad20ce68054f9d3915b5b5f5bc350c9a6d473b
                                 </div>
 
                             </div>

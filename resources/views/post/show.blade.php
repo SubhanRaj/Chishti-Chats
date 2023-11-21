@@ -32,14 +32,10 @@
     <section class="doc_blog_grid_area sec_pad forum-single-content">
         <div class="container">
             <div class="row">
-<<<<<<< HEAD
                 <div class="col-lg-12">
-=======
-                <div class="col-12">
->>>>>>> 94ad20ce68054f9d3915b5b5f5bc350c9a6d473b
                     <!-- Forum post top area -->
                     <div class="row">
-                        <div class="col-lg-9 col-md-8">
+                        <div class="col-lg-12 col-md-8">
                             <div class="forum-post-top">
                                 <span class="user-profile-icon">
                                     @php
@@ -199,23 +195,6 @@
                     </div>
                 </div>
                 <!-- /.col-lg-8 -->
-<<<<<<< HEAD
-=======
-
-                {{-- <div class="col-lg-3">
-                    <div class="forum_sidebar">
-                        <div class="widget tag_widget">
-                            <h4 class="c_head">Tags</h4>
-                            <ul class="list-unstyled w_tag_list style-light">
-                                @for ($i = 0; $i < 10; $i++)
-                                    <li><a href="#">Laravel</a></li>
-                                @endfor
-                            </ul>
-                        </div>
-
-                    </div>
-                </div> --}}
->>>>>>> 94ad20ce68054f9d3915b5b5f5bc350c9a6d473b
                 <!-- /.col-lg-4 -->
             </div>
         </div>
