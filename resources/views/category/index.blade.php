@@ -83,19 +83,20 @@
                             </div>
                             <div class="col-md-6 post-meta-wrapper">
                                 <ul class="forum-titles">
-                                    <li class="forum-reply-count">105</li>
+                                    <li class="forum-reply-count">
+                                        @php
+                                        echo DB::table('posts')
+                                        ->where('category_id', '=', $category->id)
+                                        ->count();
+                                        @endphp
+                                        posts</span>
+                                    </li>
                                     <li class="forum-freshness">
                                         <div class="freshness-box">
-                                            <div class="freshness-top">
-                                                <div class="freshness-link">
-                                                    <a href="#" title="Reply To: Main Forum Rules &amp; Policies">2
-                                                        years, 2 months ago</a>
-                                                </div>
-                                            </div>
                                             <div class="freshness-btm">
                                                 <div class="freshness-name">
                                                     <a href="#" title="View Eh Jewel's profile" class="bbp-author-link">
-                                                        <span class="bbp-author-name">Eh Jewel</span>
+                                                        <span class="bbp-author-name">Some User Name</span>
                                                     </a>
                                                 </div>
                                                 <span class="bbp-author-avatar">
