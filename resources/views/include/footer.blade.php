@@ -4,9 +4,9 @@
         <div class="shape">
             <img class="wow fadeInLeft" data-wow-delay="0.5s" src="{{asset('assets/img/footer/shape-1.png')}}" alt="">
         </div>
-        <div class="shape">
+        <!-- <div class="shape">
             <img src="{{asset('assets/img/footer/shape-2.png')}}" alt="">
-        </div>
+        </div> -->
     </div>
     <div class="container">
         <div class="footer-top pt-10 pb-20">
@@ -22,6 +22,10 @@
             <div class="d-flex justify-content-between flex-wrap">
 
                 <p class="wow fadeInRight">Copyright {{ date('Y') }}, All Rights Reserved</p>
+                <!-- developed by -->
+                    <p>
+                        Developed by Subhan Raj, Vaishnavi Mishra & Vaibhav Goswami
+                    </p>
                 <!-- <ul class="footer-menu list-unstyled wow fadeInLeft">
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Latest Projects</a></li>
