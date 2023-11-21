@@ -3,64 +3,50 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
-use App\Http\Requests\StoreCommentRequest;
-use App\Http\Requests\UpdateCommentRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class CommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function saveComment(Request $request, $user_id, $post_id)
     {
-        //
-    }
+        $validator = Validator::make($request->all(), [
+            'reply' => "required",
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->errors(),
+                'message' => 'Failed to save reply',
+                'redirect' => '0'
+            ]);
+        } else {
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+            $data = new Comment();
+            $data->user_id = $user_id;
+            $data->post_id = $post_id;
+            $data->comment = sanitizeInput($request->reply);
+            try {
+                $data->save();
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreCommentRequest $request)
-    {
-        //
-    }
+                return response()->json([
+                    'status' => true,
+                    'errors' => '',
+                    'message' => 'Reply saved successfully',
+                    'redirect' => '0'
+                ]);
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'status' => false,
+                    'errors' => $th,
+                    'errors_type' => 'Throwable',
+                    'message' => 'Failed to save reply',
+                    'redirect' => '0'
+                ]);
+            }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Comment $comment)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateCommentRequest $request, Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Comment $comment)
-    {
-        //
+        }
     }
 }

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/mcustomscrollbar/jquery.mCustomScrollbar.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style-main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link href="{{ asset('admin-assets/assets/plugins/notifications/css/lobibox.min.css') }}" rel="stylesheet">
 
     <!-- dropzone css-->
     <link rel="stylesheet" href="{{ asset('assets/vendor/dropzone/dropzone.css') }}" />
