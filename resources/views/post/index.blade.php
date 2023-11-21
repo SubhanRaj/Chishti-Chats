@@ -35,41 +35,20 @@
                         <aside class="l_widget forum_list">
                             <h3 class="wd_title">Categories</h3>
                             <ul class="navbar-nav">
+                                @for ($i = 0; $i < 5; $i++) 
+                                <li class="nav-item">
+                                    <a href="#"><i class="icon_lightbulb_alt"></i>General</a>
+                                </li>
+                                @endfor
                                 <li class="active nav-item">
                                     <a href="#"><i class=""></i>View all</a>
                                 </li>
-                                @for ($i = 0; $i < 5; $i++) <li class="nav-item">
-                                    <a href="#"><i class="icon_lightbulb_alt"></i>General</a>
-                                    </li>
-                                    @endfor
                             </ul>
                         </aside>
                         <aside class="l_widget l_tags_wd">
                             <h3 class="wd_title">Tags</h3>
                             <ul class="list-unstyled w_tag_list style-light">
                                 @for ($i = 0; $i < 5; $i++) <li><a href="#">Swagger</a></li>
-                                    @endfor
-                            </ul>
-                        </aside>
-                        <aside class="l_widget comment_list">
-                            <h3 class="wd_title">Recent Topics</h3>
-                            <ul class="navbar-nav">
-                                @for ($i = 0; $i < 5; $i++) <li>
-                                    <div class="media">
-                                        <div class="d-flex">
-                                            <i class="icon_chat_alt"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <a href="#">
-                                                <h4>Intégration 300 by</h4>
-                                            </a>
-                                            <a href="#">
-                                                <h5><img src="{{asset('assets/img/forum/r-topic-user.png')}}" alt=""> Jean Conner</h5>
-                                            </a>
-                                            <p>4 days, 3 hours ago</p>
-                                        </div>
-                                    </div>
-                                    </li>
                                     @endfor
                             </ul>
                         </aside>
@@ -202,37 +181,6 @@
                             <button class="btn" type="button" onclick="window.location.href='{{ route('posts.create') }}'">
                                 <img src="{{ asset('assets/img/forum/helpful-user/question-1.png') }}" alt="">Ask Question <i class="arrow_carrot-right"></i>
                             </button>
-                        </aside>
-                        <aside class="r_widget question_list_wd">
-                            <div class="r_heading d-flex justify-content-between">
-                                <h3>Top</h3>
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">7 days</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">30 days</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <ul class="navbar-nav">
-                                        @for($i = 0; $i < 5; $i++) <li>
-                                            <a href="#"><span>{{$i+1}}</span>Example of NearBy Place Search - SITE KIT</a>
-                                            </li>
-                                            @endfor
-                                    </ul>
-                                </div>
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <ul class="navbar-nav">
-                                        @for($i = 0; $i < 5; $i++) <li>
-                                            <a href="#"><span>{{$i+1}}</span>Example of NearBy Place Search - SITE KIT</a>
-                                            </li>
-                                            @endfor
-                                    </ul>
-                                </div>
-                            </div>
                         </aside>
                     </div>
                 </div>
