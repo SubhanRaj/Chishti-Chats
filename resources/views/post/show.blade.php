@@ -31,7 +31,7 @@
     <section class="doc_blog_grid_area sec_pad forum-single-content">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <!-- Forum post top area -->
                     <div class="row">
                         <div class="col-lg-9 col-md-8">
@@ -253,19 +253,6 @@
                     </div>
                 </div>
                 <!-- /.col-lg-8 -->
-
-                <div class="col-lg-3">
-                    <div class="forum_sidebar">
-                        <div class="widget tag_widget">
-                            <h4 class="c_head">Tags</h4>
-                            <ul class="list-unstyled w_tag_list style-light">
-                                @for($i = 0; $i < 10; $i++) <li><a href="#">Laravel</a></li>
-                                    @endfor
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
                 <!-- /.col-lg-4 -->
             </div>
         </div>
