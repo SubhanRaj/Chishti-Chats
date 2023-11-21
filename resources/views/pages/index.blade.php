@@ -182,7 +182,7 @@
                     </p>
                 </div>
                 <div class="col-lg-5 text-lg-end text-center">
-                    <a href="#" class="action_btn"><i class="icon_group"></i> Join Community </a>
+                    <a href="{{route('register')}}" class="action_btn"><i class="icon_group"></i> Join Community </a>
                 </div>
             </div>
         </div>
