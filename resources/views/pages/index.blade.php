@@ -97,8 +97,10 @@
                                         <img src="{{ asset('assets/img/home_two/lightbulb.svg') }}" alt="icon">
                                         <div class="box-content">
                                             <a href="{{ route('categories.show', $category->slug) }}">
-                                                <h5>
-                                                    {{ $category->category_name }}
+                                                <h5 style="text-transform: capitalize;">
+                                                
+                                                
+                                                {{ $category->category_name }}
                                                 </h5>
                                             </a>
                                             <span>

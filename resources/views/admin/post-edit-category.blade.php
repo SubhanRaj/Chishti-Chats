@@ -38,14 +38,14 @@
                                     <div class="col-12 mb-3">
 
                                         <form method="POST" id="blog-cat-form"
-                                            onsubmit="uploadData1('blog-cat-form', '{{ route('admin.adminBlogCategoryUpdate', $data[0]->id) }}', 'alert-box', 'btn-box-1', event)"
+                                            onsubmit="uploadData1('blog-cat-form', '{{ route('admin.adminPostCategoryUpdate', $data[0]->id) }}', 'alert-box', 'btn-box-1', event)"
                                             class="shadow mx-3 p-3">
                                             @csrf
                                             <div id="alert-box"></div>
                                             <div class="mb-3">
                                                 <label for="academic-session" class="form-label">Category Name</label>
                                                 <input type="text" name="category_name" class="form-control" required
-                                                    placeholder="Category Name" value=" {{ $data[0]->cat_name }}">
+                                                    placeholder="Category Name" value=" {{ $data[0]->category_name }}">
                                                 <p class="form-feedback invalid-feedback" data-name="category_name"></p>
                                             </div>
                                             <div class="mb-3">

@@ -19,11 +19,7 @@
                 <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
                     <a href="{{ route('categories.index') }}" class="nav-link">Categories</a>
                 </li>
-                @if ($user_id !== false)
-                <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}">
-                    <a href="{{ route('profile') }}" class="nav-link">User Profile</a>
-                </li>
-                @endif
+                
             </ul>
             <div class="right-nav">
                 @if ($user_id !== false)
@@ -113,11 +109,7 @@
                 <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
                     <a href="{{ route('categories.index') }}" class="nav-link">Categories</a>
                 </li>
-                @if ($user_id !== false)
-                <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}">
-                    <a href="{{ route('profile') }}" class="nav-link">User Profile</a>
-                </li>
-                @endif
+               
             </ul>
         </nav>
     </div>

@@ -54,12 +54,15 @@
                                         <li>
                                             <div class="media">
                                                 <div class="d-flex">
-                                                    @php
-                                                        $user_first_letter = firstLetter($user_id);
-                                                    @endphp
-                                                    @if ($user_first_letter != false)
-                                                        {{ $user_first_letter }}
-                                                    @endif
+                                                    <span class="user-profile-icon">
+                                                        @php
+                                                            $user_first_letter = firstLetter($user_id);
+                                                        @endphp
+                                                        @if ($user_first_letter != false)
+                                                            {{ $user_first_letter }}
+                                                        @endif
+
+                                                    </span>
                                                 </div>
                                                 <div class="media-body">
                                                     <div class="t_title">
