@@ -161,7 +161,7 @@ class UserController extends Controller
                         session()->put('email', $email);
 
                         $mail_data = [
-                            "subject" => "Otp for device verification fro adabkari.com",
+                            "subject" => "Otp for device verification",
                             "otp" => $otp,
                             "path" => array(),
                             "view" => 'emails.login-email'
