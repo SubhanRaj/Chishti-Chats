@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
@@ -41,8 +42,14 @@ class CategoryController extends Controller
     {
         // get the category by matching the slug
         $category = Category::where('slug', $slug)->firstOrFail();
+        if (!is_null($category)) {
+            $cat_id = $category->id;
+            $posts = Post::where('category_id', '=', $cat_id)->get();
+            return view('category.show', compact('category', 'posts'));
+        } else {
+            abort(404);
+        }
         // return view with category
-        return view('category.show', compact('category'));
     }
 
     /**
@@ -50,7 +57,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-    
+
     }
 
     /**

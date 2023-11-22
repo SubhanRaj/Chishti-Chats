@@ -256,8 +256,19 @@ function yearOption($table)
 
 function sanitizeInput($input)
 {
-    return trim(strip_tags($input));
+    // Remove leading and trailing spaces
+    $input = trim($input);
+
+    // Remove HTML tags and entities
+    $input = strip_tags($input);
+
+    $input = str_replace("'", "", $input);
+    // Convert special characters to their HTML entities
+    $input = htmlentities($input, ENT_QUOTES, 'UTF-8');
+
+    return $input;
 }
+
 
 function generateId($table, $col, $three_digit_prefix)
 {

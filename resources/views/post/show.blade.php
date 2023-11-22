@@ -2,7 +2,18 @@
     <x-slot:title>
         {{ $post->title }}
     </x-slot:title>
-    <x-search />
+    <x-search>
+        @if (isset($query))
+            <x-slot:query>
+                {{ $query }}
+            </x-slot:query>
+        @else
+            <x-slot:query>
+
+            </x-slot:query>
+        @endif
+
+    </x-search>
     <!--================Forum Breadcrumb Area =================-->
 
     <section class="page_breadcrumb">
@@ -111,7 +122,7 @@
                                 </form>
                             @else
                                 <button type="button" class="action_btn btn_small_two btn-text-medium round-btn-2"
-                                    onclick="show_modal('login-model')">Login for reply !</button>
+                                    onclick="show_modal('login-modal')">Login for reply !</button>
                             @endif
                         </div>
                     </div>

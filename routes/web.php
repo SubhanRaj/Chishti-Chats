@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\MetaController;
@@ -88,7 +89,7 @@ Route::controller(AjaxRequestController::class)->name('frontend.')->group(functi
 });
 
 
- 
+
 
 // User Login Started
 Route::controller(UserController::class)->name('frontend.')->group(function () {
@@ -121,6 +122,9 @@ Route::controller(UserController::class)->name('frontend.')->group(function () {
 Route::controller(UserAccountController::class)->name('user_account.')->group(function () {
     Route::get('/logout-successfully', 'userLogoutPage')->name('userLogoutPage');
 });
+Route::controller(SearchController::class)->name('search.')->group(function () {
+    Route::get('/search', 'search')->name('search');
+});
 
 
 Route::middleware('UserLogin')->group(function () {
@@ -135,11 +139,12 @@ Route::middleware('UserLogin')->group(function () {
     });
     Route::controller(CommentController::class)->name('comment.')->group(function () {
         Route::post('/save-comment/{user_id}/{post_id}', 'saveComment')->name('saveComment');
-        
+
     });
 
-
 });
+
+
 
 
 // =================== Admin Dashboard Started =================

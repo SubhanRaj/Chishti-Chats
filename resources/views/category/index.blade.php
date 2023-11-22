@@ -2,7 +2,18 @@
     <x-slot:title>
         Categories
     </x-slot:title>
-    <x-search />
+    <x-search>
+        @if (isset($query))
+            <x-slot:query>
+                {{ $query }}
+            </x-slot:query>
+        @else
+            <x-slot:query>
+
+            </x-slot:query>
+        @endif
+
+    </x-search>
     <!--================Forum Breadcrumb Area =================-->
 
     <section class="page_breadcrumb">
@@ -33,7 +44,7 @@
                     <div class="answer-action shadow">
                         <div class="action-content">
                             <div class="image-wrap">
-                                <img src="{{asset('assets/img/home_support/answer.png')}}" alt="answer action">
+                                <img src="{{ asset('assets/img/home_support/answer.png') }}" alt="answer action">
                             </div>
                             <div class="content">
                                 <h2 class="ans-title">Have a Question?</h2>
@@ -42,7 +53,7 @@
                         </div>
                         <!-- /.action-content -->
                         <div class="action-button-container">
-                            <a href="{{route('posts.create')}}" class="action_btn btn-ans">Ask a Question</a>
+                            <a href="{{ route('profile') }}" class="action_btn btn-ans">Ask a Question</a>
                         </div>
                         <!-- /.action-button-container -->
                     </div>
@@ -56,7 +67,7 @@
                         <div class="col-md-6 col-sm-6 support-category-menus">
                             <ul class="forum-titles">
                                 <li class="forum-reply-count">Posts</li>
-                                <li class="forum-freshness">Last Post</li>
+                                {{-- <li class="forum-freshness">Last Post</li> --}}
                             </ul>
                         </div>
                         <!-- /.support-category-menus -->
@@ -64,34 +75,34 @@
                     <!-- /.post-header -->
 
                     <div class="community-posts-wrapper bb-radius">
-                        @foreach ( $categories as $category )
-                        <!-- Forum Item -->
-                        <div class="community-post style-two forum-item bug">
-                            <div class="col-md-6 post-content">
-                                <div class="author-avatar forum-icon">
-                                    <img src="{{asset('assets/img/home_support/rc1.png')}}" alt="community post">
-                                </div>
-                                <div class="entry-content">
-                                    <a href="{{ route('categories.show', $category->slug) }}">
-                                        <h3 class="post-title">
-                                            {{ $category->category_name }}
+                        @foreach ($categories as $category)
+                            <!-- Forum Item -->
+                            <div class="community-post style-two forum-item bug">
+                                <div class="col-md-6 post-content">
+                                    <div class="author-avatar forum-icon">
+                                        <img src="{{ asset('assets/img/home_support/rc1.png') }}" alt="community post">
+                                    </div>
+                                    <div class="entry-content">
+                                        <a href="{{ route('categories.show', $category->slug) }}">
+                                            <h3 class="post-title">
+                                                {{ $category->category_name }}
 
-                                        </h3>
-                                    </a>
-                                    <p>This forum is a special forum for general announcements.</p>
+                                            </h3>
+                                        </a>
+                                        {{-- <p>This forum is a special forum for general announcements.</p> --}}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 post-meta-wrapper">
-                                <ul class="forum-titles">
-                                    <li class="forum-reply-count">
-                                        @php
-                                        echo DB::table('posts')
-                                        ->where('category_id', '=', $category->id)
-                                        ->count();
-                                        @endphp
-                                        posts</span>
-                                    </li>
-                                    <li class="forum-freshness">
+                                <div class="col-md-6 post-meta-wrapper">
+                                    <ul class="forum-titles">
+                                        <li class="forum-reply-count">
+                                            @php
+                                                echo DB::table('posts')
+                                                    ->where('category_id', '=', $category->id)
+                                                    ->count();
+                                            @endphp
+                                            posts</span>
+                                        </li>
+                                        {{-- <li class="forum-freshness">
                                         <div class="freshness-box">
                                             <div class="freshness-btm">
                                                 <div class="freshness-name">
@@ -104,11 +115,11 @@
                                                 </span>
                                             </div>
                                         </div>
-                                    </li>
-                                </ul>
+                                    </li> --}}
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <!-- /.forum-item  -->
+                            <!-- /.forum-item  -->
                         @endforeach
                     </div>
                     <!-- /.community-posts-wrapper -->
