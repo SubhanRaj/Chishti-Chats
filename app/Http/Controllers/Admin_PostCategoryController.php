@@ -42,7 +42,7 @@ class Admin_PostCategoryController extends Controller
             } else {
                 $data = new Category();
 
-                $data->category_name = strtolower(trim($request->category_name));
+                $data->category_name = trim($request->category_name);
                 $data->slug = strtolower(trim($request->slug));
 
                 $save_status = $data->save();
@@ -89,7 +89,7 @@ class Admin_PostCategoryController extends Controller
         } else {
             $data = Category::where('id', '=', $id)->get();
 
-            $data[0]->category_name = strtolower(trim($request->category_name));
+            $data[0]->category_name = trim($request->category_name);
             $data[0]->slug = strtolower(trim($request->slug));
 
             $save_status = $data[0]->save();
