@@ -4,10 +4,8 @@
 <nav class="navbar navbar-expand-lg menu_one sticky-nav d-none d-lg-block">
     <div class="container">
         <a class="navbar-brand header_logo" href="{{ route('index') }}">
-            <img class="first_logo sticky_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px"
-                alt="logo">
-            <img class="white_logo main_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px"
-                alt="logo">
+            <img class="first_logo sticky_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px" alt="logo">
+            <img class="white_logo main_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px" alt="logo">
         </a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -21,26 +19,27 @@
                 <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
                     <a href="{{ route('categories.index') }}" class="nav-link">Categories</a>
                 </li>
+                @if ($user_id !== false)
                 <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}">
                     <a href="{{ route('profile') }}" class="nav-link">User Profile</a>
                 </li>
+                @endif
             </ul>
             <div class="right-nav">
                 @if ($user_id !== false)
-                    <a class="d-flex justify-content-center align-items-center" href="{{ route('profile') }}">
-                        <span class="user-profile-icon">
-                            @php
-                                $user_first_letter = firstLetter($user_id);
-                            @endphp
-                            @if ($user_first_letter != false)
-                                {{ $user_first_letter }}
-                            @endif
-                        </span>
-                        <span class="ps-2"> Account</span>
-                    </a>
+                <a class="d-flex justify-content-center align-items-center" href="{{ route('profile') }}">
+                    <span class="user-profile-icon">
+                        @php
+                        $user_first_letter = firstLetter($user_id);
+                        @endphp
+                        @if ($user_first_letter != false)
+                        {{ $user_first_letter }}
+                        @endif
+                    </span>
+                    <span class="ps-2"> Account</span>
+                </a>
                 @else
-                    <button class="action_btn btn_small_two btn-text-medium round-btn-2" type="button"
-                        onclick="show_modal('login-modal')">Sign In</button>
+                <button class="action_btn btn_small_two btn-text-medium round-btn-2" type="button" onclick="show_modal('login-modal')">Sign In</button>
                 @endif
                 {{-- <div class="px-2 js-darkmode-btn" title="Toggle dark mode">
                     <label for="something" class="tab-btn tab-btns">
@@ -69,10 +68,8 @@
                 </span>
             </button>
             <a class="navbar-brand header_logo" href="{{ route('index') }}">
-                <img class="sticky_logo " src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px"
-                    alt="logo">
-                <img class="main_logo white_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px"
-                    alt="logo">
+                <img class="sticky_logo " src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px" alt="logo">
+                <img class="main_logo white_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px" alt="logo">
             </a>
         </div>
         <div class="mobile_menu_right">
@@ -99,10 +96,8 @@
         </div>
         <div class="mobile_logo">
             <a class="navbar-brand header_logo me-0" href="{{ route('index') }}">
-                <img class="sticky_logo main_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px"
-                    alt="logo">
-                <img class="white_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px"
-                    alt="logo">
+                <img class="sticky_logo main_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px" alt="logo">
+                <img class="white_logo" src="{{ asset('assets/img/logo/logo-full.png') }}" height="75px" alt="logo">
             </a>
         </div>
     </div>
@@ -118,9 +113,11 @@
                 <li class="nav-item {{ request()->is('categories') ? 'active' : '' }}">
                     <a href="{{ route('categories.index') }}" class="nav-link">Categories</a>
                 </li>
+                @if ($user_id !== false)
                 <li class="nav-item {{ request()->is('profile') ? 'active' : '' }}">
                     <a href="{{ route('profile') }}" class="nav-link">User Profile</a>
                 </li>
+                @endif
             </ul>
         </nav>
     </div>
