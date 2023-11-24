@@ -89,7 +89,6 @@
 
                                             </h3>
                                         </a>
-                                        {{-- <p>This forum is a special forum for general announcements.</p> --}}
                                     </div>
                                 </div>
                                 <div class="col-md-6 post-meta-wrapper">
@@ -102,20 +101,6 @@
                                             @endphp
                                             posts</span>
                                         </li>
-                                        {{-- <li class="forum-freshness">
-                                        <div class="freshness-box">
-                                            <div class="freshness-btm">
-                                                <div class="freshness-name">
-                                                    <a href="#" title="View Eh Jewel's profile" class="bbp-author-link">
-                                                        <span class="bbp-author-name">Some User Name</span>
-                                                    </a>
-                                                </div>
-                                                <span class="bbp-author-avatar">
-                                                    <img alt="Eh Jewel" src="{{asset('assets/img/home_support/cp5.jpg')}}" class="avatar photo">
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </li> --}}
                                     </ul>
                                 </div>
                             </div>
