@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Otp for device verification</title>
+    <title>Otp for Device Verification</title>
 </head>
 
 <body>
