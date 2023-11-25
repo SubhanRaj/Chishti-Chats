@@ -8,7 +8,7 @@ Chishti Chats is a student-centric forum developed to foster a vibrant community
 
 ## Environment Setup
 
-Refer to the [readme](readme.md) file for environment setup.
+Refer to the [readme](README.md) file for environment setup.
 
 ## Contribution Guidelines
 

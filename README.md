@@ -123,4 +123,8 @@ Now, you can access the application at `http://localhost:3000`.
 
 We welcome contributions to Chishti Chats. If you are interested in contributing to this project, please read our [contributing guidelines](CONTRIBUTING.md).
 
+## License
+
+Chishti Chats is open-sourced software licensed under the [MIT license](LICENSE). You are free to use, modify, distribute, and sell it under the given license.
+
 
