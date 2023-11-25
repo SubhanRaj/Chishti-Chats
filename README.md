@@ -91,13 +91,26 @@ php artisan migrate
 ```bash
 php artisan db:seed
 ```
-9. Run the artisan serve command:
+1. Setup Email configuration in `.env` file for OTP verification:
+
+```bash
+MAIL_MAILER= // Your Mail Driver
+MAIL_HOST= // Your SMTP Host
+MAIL_PORT= // Your SMTP Port
+MAIL_USERNAME= // Your SMTP Username
+MAIL_PASSWORD= // Your SMTP Password
+MAIL_ENCRYPTION= // Your SMTP Encryption
+MAIL_FROM_ADDRESS= // Your SMTP From Address
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+10. Run the artisan serve command:
 
 ```bash
 php artisan serve
 ```
 
-10. Run the npm watch command:
+11. Run the npm watch command:
 
 ```bash
 npm run watch
