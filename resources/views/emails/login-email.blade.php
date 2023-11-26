@@ -7,7 +7,7 @@
 
 <body>
     <h1>
-        Hello, {{ $mailData['name'] }}
+        Hello
     </h1>
     <p> Your OTP to login into Chisthi Chats is
     {{ $mailData['otp'] }}

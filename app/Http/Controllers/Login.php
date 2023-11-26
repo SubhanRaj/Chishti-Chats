@@ -69,7 +69,6 @@ class Login extends Controller
 
                         $mail_data = [
                             "subject" => "Otp for device verification from Chishti Chats",
-                            "name" => $user_data[0]['name'],
                             "otp" => $otp,
                             "path" => array(),
                             "view" => 'emails.login-email'
