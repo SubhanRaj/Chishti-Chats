@@ -68,7 +68,8 @@ class Login extends Controller
                         session()->put('username', $username);
 
                         $mail_data = [
-                            "subject" => "Otp for device verification from adabkari.com",
+                            "subject" => "Otp for device verification from Chishti Chats",
+                            "name" => $user_data[0]['name'],
                             "otp" => $otp,
                             "path" => array(),
                             "view" => 'emails.login-email'
